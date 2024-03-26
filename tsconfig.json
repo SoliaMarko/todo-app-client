@@ -22,32 +22,29 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Path Aliases */
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      /* common */
-      "@": ["src"],
-      "@assets/*": ["./src/assets/*"],
-      "@constants/*": ["src/constants/*"],
-      "@utils/*": ["src/utils/*"],
-      /* client-specific */
-      "@client/*": ["src/client/*"],
-      "@client/components/*": ["src/client/components/*"],
-      "@client/hooks/*": ["src/client/hooks/*"],
-      "@client/pages/*": ["src/client/pages/*"],
-      "@client/services/*": ["src/client/services/*"],
-      "@client/state": ["src/client/state/*"],
-      "@client/styles/*": ["src/client/styles/*"],
-      "@client/tests/*": ["src/client/tests/*"],
-      "@client/types/*": ["src/client/types/*"],
-      "@client/validations/*": ["src/client/validations/*"],
-      /* server-specific */
-      "@server/*": ["src/server/*"],
-      "@server/models/*": ["src/server/models/*"],
-      "@server/routes/*": ["src/server/routes/*"],
-      "@server/tests/*": ["src/server/tests/*"],
-      "@server/types/*": ["src/server/types/*"]
+      "@/*": ["./*"],
+      "@assets/*": ["./assets/*"],
+      "@constants/*": ["./constants/*"],
+      "@utils/*": ["./utils/*"],
+      "@client/*": ["./client/*"],
+      "@client/components/*": [".client/components/*"],
+      "@client/hooks/*": ["./client/hooks/*"],
+      "@client/pages/*": ["./client/pages/*"],
+      "@client/services/*": ["./client/services/*"],
+      "@client/state": ["./client/state/*"],
+      "@client/styles/*": ["./client/styles/*"],
+      "@client/tests/*": ["./client/tests/*"],
+      "@client/types/*": ["./client/types/*"],
+      "@client/validations/*": ["./client/validations/*"],
+      "@server/*": ["./server/*"],
+      "@server/models/*": ["./server/models/*"],
+      "@server/routes/*": ["./server/routes/*"],
+      "@server/tests/*": ["./server/tests/*"],
+      "@server/types/*": ["./server/types/*"]
     }
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{"path": "./tsconfig.node.json"}]
 }
