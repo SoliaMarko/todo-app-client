@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      /* common */
+      "@": ["src"],
+      "@assets/*": ["/src/assets/*"],
+      "@constants/*": ["src/constants/*"],
+      "@utils/*": ["src/utils/*"],
+      /* client-specific */
+      "@client/*": ["src/client/*"],
+      "@client/components/*": ["src/client/components/*"],
+      "@client/hooks/*": ["src/client/hooks/*"],
+      "@client/pages/*": ["src/client/pages/*"],
+      "@client/services/*": ["src/client/services/*"],
+      "@client/state": ["src/client/state/*"],
+      "@client/styles/*": ["src/client/styles/*"],
+      "@client/tests/*": ["src/client/tests/*"],
+      "@client/types/*": ["src/client/types/*"],
+      "@client/validations/*": ["src/client/validations/*"],
+      /* server-specific */
+      "@server/*": ["src/server/*"],
+      "@server/models/*": ["src/server/models/*"],
+      "@server/routes/*": ["src/server/routes/*"],
+      "@server/tests/*": ["src/server/tests/*"],
+      "@server/types/*": ["src/server/types/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
