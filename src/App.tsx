@@ -1,12 +1,12 @@
 import {ColorModeContext} from './client/theme';
 import {CssBaseline, ThemeProvider} from '@mui/material';
-import Topbar from './client/components/ThemeToggler';
 import {Routes, Route} from 'react-router-dom';
+import {useMode} from './client/hooks/useMode';
+import {CREATE_TASK_ROUTE, ROOT_ROUTE, UPDATE_TASK_ROUTE} from './constants/route.constant';
+// import Topbar from './client/components/buttons/ThemeToggleButton';
 import Overview from './client/pages/Overview';
 import CreateTask from './client/pages/CreateTask';
 import UpdateTask from './client/pages/UpdateTask';
-import {useMode} from './client/hooks/useMode';
-import {CREATE_TASK_ROUTE, ROOT_ROUTE, UPDATE_TASK_ROUTE} from './constants/route.constant';
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className="content">
-            <Topbar />
+            {/* <Topbar /> */}
             <Routes>
               <Route path={ROOT_ROUTE} element={<Overview />} />
               <Route path={CREATE_TASK_ROUTE} element={<CreateTask />} />

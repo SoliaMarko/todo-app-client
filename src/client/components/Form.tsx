@@ -5,7 +5,7 @@ import {taskSchema} from '../validations/form.validation';
 import {TaskActionType} from '../types/form.type';
 import {TaskAction} from '../enums/taskAction.enum';
 import {priorityOptions} from '../../constants/form.constant';
-import SubmitButton from '../components/SubmitButton';
+import SubmitButton from './buttons/SubmitButton';
 
 const initialValues = {
   note: '',

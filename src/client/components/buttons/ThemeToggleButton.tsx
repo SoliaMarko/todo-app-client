@@ -1,11 +1,11 @@
 import {Box, IconButton, useTheme} from '@mui/material';
 import {useContext} from 'react';
-import {ColorModeContext} from '../theme';
-import {ColorMode} from '../types/theme.type';
+import {ColorModeContext} from '../../theme';
+import {ColorMode} from '../../types/theme.type';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
-const ThemeToggler = () => {
+const ThemeTogglerButton = () => {
   const theme = useTheme();
   const colorMode: ColorMode = useContext(ColorModeContext);
 
@@ -18,4 +18,4 @@ const ThemeToggler = () => {
   );
 };
 
-export default ThemeToggler;
+export default ThemeTogglerButton;
