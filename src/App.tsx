@@ -1,15 +1,16 @@
-import { ColorModeContext } from './client/theme';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import {ColorModeContext} from './client/theme';
+import {CssBaseline, ThemeProvider} from '@mui/material';
 import Topbar from './client/components/ThemeToggler';
-import { Routes, Route } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Overview from './client/pages/Overview';
 import CreateTask from './client/pages/CreateTask';
 import UpdateTask from './client/pages/UpdateTask';
-import { useMode } from './client/hooks/useMode';
+import {useMode} from './client/hooks/useMode';
+import {CREATE_TASK_ROUTE, ROOT_ROUTE, UPDATE_TASK_ROUTE} from './constants/route.constant';
 import './App.css';
 
 function App() {
-  const { theme, colorMode } = useMode();
+  const {theme, colorMode} = useMode();
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -19,9 +20,9 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              <Route path="/" element={<Overview />} />
-              <Route path="/new" element={<CreateTask />} />
-              <Route path="/id" element={<UpdateTask />} />
+              <Route path={ROOT_ROUTE} element={<Overview />} />
+              <Route path={CREATE_TASK_ROUTE} element={<CreateTask />} />
+              <Route path={UPDATE_TASK_ROUTE} element={<UpdateTask />} />
             </Routes>
           </main>
         </div>

@@ -1,9 +1,9 @@
 {
   "arrowParens": "always",
-  "bracketSpacing": true,
+  "bracketSpacing": false,
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
-  "printWidth": 80,
+  "printWidth": 150,
   "proseWrap": "always",
   "quoteProps": "as-needed",
   "semi": true,

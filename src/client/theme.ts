@@ -1,6 +1,6 @@
-import { createContext } from 'react';
+import {createContext} from 'react';
 
-export const tokens = (mode: 'dark' | 'light') => ({
+export const themeColors = (mode: 'dark' | 'light') => ({
   ...(mode === 'dark'
     ? {
         grey: {
@@ -118,9 +118,9 @@ export const tokens = (mode: 'dark' | 'light') => ({
       })
 });
 
-// mui theme settings
+// mui themeColors settings
 export const themeSettings = (mode: 'dark' | 'light') => {
-  const colors = tokens(mode);
+  const colors = themeColors(mode);
 
   return {
     palette: {
