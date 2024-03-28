@@ -2,7 +2,7 @@ import {ColorModeContext} from './client/theme';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {Routes, Route} from 'react-router-dom';
 import {useMode} from './client/hooks/useMode';
-import {CREATE_TASK_ROUTE, ROOT_ROUTE, UPDATE_TASK_ROUTE} from './constants/route.constant';
+import {routes} from './constants/route.constant';
 import ThemeTogglerButton from './client/components/buttons/ThemeToggleButton';
 import Overview from './client/pages/Overview';
 import CreateTask from './client/pages/CreateTask';
@@ -20,9 +20,9 @@ function App() {
           <main className="content">
             <ThemeTogglerButton />
             <Routes>
-              <Route path={ROOT_ROUTE} element={<Overview />} />
-              <Route path={CREATE_TASK_ROUTE} element={<CreateTask />} />
-              <Route path={UPDATE_TASK_ROUTE} element={<UpdateTask />} />
+              <Route path={routes.ROOT} element={<Overview />} />
+              <Route path={routes.CREATE} element={<CreateTask />} />
+              <Route path={routes.UPDATE} element={<UpdateTask />} />
             </Routes>
           </main>
         </div>

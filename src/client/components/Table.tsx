@@ -8,6 +8,24 @@ import {paginationRowsOptions} from '../../constants/table.constant';
 import {themeColors} from '../theme';
 import {useTheme} from '@mui/material/styles';
 
+const renderEditButton = () => {
+  return (
+    <IconButton color="secondary" aria-label="Edit">
+      <Link to="/id" style={{color: 'inherit', textDecoration: 'none'}}>
+        <ModeEditIcon />
+      </Link>
+    </IconButton>
+  );
+};
+
+const renderDeleteButton = (colors) => {
+  return (
+    <IconButton sx={{color: colors.redAccent[500]}} aria-label="Delete">
+      <DeleteForeverIcon />
+    </IconButton>
+  );
+};
+
 const Table = () => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
@@ -26,23 +44,12 @@ const Table = () => {
     {
       field: 'edit-button',
       headerName: '',
-      renderCell: () => (
-        <IconButton color="secondary" aria-label="Delete">
-          {/* <Link to={`/${params.id}`} style={{ color: 'inherit', textDecoration: 'none' }}> */}
-          <Link to="/id" style={{color: 'inherit', textDecoration: 'none'}}>
-            <ModeEditIcon />
-          </Link>
-        </IconButton>
-      )
+      renderCell: () => renderEditButton()
     },
     {
       field: 'delete-button',
       headerName: '',
-      renderCell: () => (
-        <IconButton sx={{color: colors.redAccent[500]}} aria-label="Delete">
-          <DeleteForeverIcon />
-        </IconButton>
-      )
+      renderCell: () => renderDeleteButton(colors)
     }
   ];
 
