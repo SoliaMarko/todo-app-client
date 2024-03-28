@@ -1,35 +1,14 @@
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import {Box, IconButton} from '@mui/material';
+import {Box} from '@mui/material';
+import {useTheme} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
-import {Link} from 'react-router-dom';
 import {mockDataTasks} from '../mockData';
 import {paginationRowsOptions} from '../../constants/table.constant';
 import {themeColors} from '../theme';
-import {useTheme} from '@mui/material/styles';
-
-const renderEditButton = () => {
-  return (
-    <IconButton color="secondary" aria-label="Edit">
-      <Link to="/id" style={{color: 'inherit', textDecoration: 'none'}}>
-        <ModeEditIcon />
-      </Link>
-    </IconButton>
-  );
-};
-
-const renderDeleteButton = () => {
-  return (
-    <IconButton color="error" aria-label="Delete">
-      <DeleteForeverIcon />
-    </IconButton>
-  );
-};
+import {renderEditButton, renderDeleteButton} from '../../utils/renderButtons';
 
 const Table = () => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
-
   const columns = [
     {field: 'id', headerName: 'ID', flex: 1},
     {

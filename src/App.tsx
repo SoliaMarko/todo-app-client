@@ -1,12 +1,12 @@
-import {ColorModeContext} from './client/theme';
-import {CssBaseline, ThemeProvider} from '@mui/material';
 import {Routes, Route} from 'react-router-dom';
+import {CssBaseline, ThemeProvider} from '@mui/material';
+import {ColorModeContext} from './client/theme';
 import {useMode} from './client/hooks/useMode';
-import {routes} from './constants/route.constant';
 import ThemeTogglerButton from './client/components/buttons/ThemeToggleButton';
 import Overview from './client/pages/Overview';
 import CreateTask from './client/pages/CreateTask';
 import UpdateTask from './client/pages/UpdateTask';
+import {routes} from './constants/route.constant';
 import './App.css';
 
 function App() {

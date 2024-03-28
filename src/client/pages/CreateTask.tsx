@@ -1,7 +1,7 @@
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {Link} from 'react-router-dom';
 import {IconButton} from '@mui/material';
 import {Box} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Form from '../components/Form';
 import {TaskAction} from '../enums/taskAction.enum';
 

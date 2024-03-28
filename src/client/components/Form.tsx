@@ -1,17 +1,15 @@
-import {Box, TextField, MenuItem} from '@mui/material';
+import {Box, TextField, MenuItem, useMediaQuery} from '@mui/material';
 import {Formik} from 'formik';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import SubmitButton from './buttons/SubmitButton';
 import {taskSchema} from '../validations/form.validation';
 import {TaskAction} from '../enums/taskAction.enum';
-import {priorityOptions} from '../../constants/form.constant';
-import SubmitButton from './buttons/SubmitButton';
 import {TaskFormModel} from '../models/form.model';
+import {priorityOptions} from '../../constants/form.constant';
 
 const initialValues = new TaskFormModel();
 
 const Form = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) => {
   const isNonMobile = useMediaQuery('(min-width: 600px');
-
   const handleFormSubmit = () => {
     console.log('submit');
   };
