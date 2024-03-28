@@ -15,10 +15,10 @@ const Table = () => {
   const columns = [
     {field: 'id', headerName: 'ID', flex: 1},
     {
-      field: 'note',
+      field: 'task',
       headerName: 'TASK',
       flex: 4,
-      cellClassName: 'name-column--cell'
+      cellClassName: 'task-column--cell'
     },
     {field: 'priority', headerName: 'PRIORITY', flex: 2},
     {field: 'expiration_date', headerName: 'EXPIRED', flex: 2},
@@ -47,8 +47,19 @@ const Table = () => {
   ];
 
   return (
-    <Box>
-      <Box>
+    <Box m="20px">
+      <Box
+        height="80vh"
+        sx={{
+          '& .task-column--cell': {
+            color: colors.greenAccent[200]
+          },
+          '& .MuiDataGrid-footerContainer': {
+            borderTop: 'none',
+            backgroundColor: colors.greenAccent[600]
+          }
+        }}
+      >
         <DataGrid
           initialState={{
             pagination: {
