@@ -18,9 +18,9 @@ const renderEditButton = () => {
   );
 };
 
-const renderDeleteButton = (colors) => {
+const renderDeleteButton = () => {
   return (
-    <IconButton sx={{color: colors.redAccent[500]}} aria-label="Delete">
+    <IconButton color="error" aria-label="Delete">
       <DeleteForeverIcon />
     </IconButton>
   );
@@ -49,7 +49,7 @@ const Table = () => {
     {
       field: 'delete-button',
       headerName: '',
-      renderCell: () => renderDeleteButton(colors)
+      renderCell: () => renderDeleteButton()
     }
   ];
 
