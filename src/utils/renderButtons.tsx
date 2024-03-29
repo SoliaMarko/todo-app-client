@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {IconButton} from "@mui/material";
+import {IconButton} from '@mui/material';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 

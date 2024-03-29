@@ -7,9 +7,7 @@ export const useMode = () => {
   const toggleColorMode = () => {
     setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
-  const colorMode = useMemo(() => {
-    return {toggleColorMode};
-  }, []);
+  const colorMode = useMemo(() => ({toggleColorMode}), []);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return {theme, colorMode};
