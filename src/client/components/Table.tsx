@@ -18,17 +18,19 @@ const Table = () => {
       cellClassName: 'task-column--cell'
     },
     {field: 'priority', headerName: 'PRIORITY', flex: 2},
-    {field: 'expiration_date', headerName: 'EXPIRED', flex: 2},
+    {field: 'deadline', headerName: 'DEADLINE', flex: 2},
     {field: 'tags', headerName: 'TAGS', flex: 2},
     {
       field: 'edit-button',
       headerName: '',
-      renderCell: () => renderEditButton()
+      renderCell: () => renderEditButton(),
+      sortable: false
     },
     {
       field: 'delete-button',
       headerName: '',
-      renderCell: () => renderDeleteButton()
+      renderCell: () => renderDeleteButton(),
+      sortable: false
     }
   ];
 
@@ -40,9 +42,22 @@ const Table = () => {
           '& .task-column--cell': {
             color: colors.greenAccent[200]
           },
+          '& .MuiDataGrid-columnHeader': {
+            backgroundColor: colors.greenAccent[600]
+          },
           '& .MuiDataGrid-footerContainer': {
             borderTop: 'none',
             backgroundColor: colors.greenAccent[600]
+          },
+          '& .MuiDataGrid-columnHeader:focus-within, & .MuiDataGrid-columnHeader:focus': {
+            outline: 'none !important'
+          },
+          '& .MuiDataGrid-root, & .MuiDataGrid-cell:focus-within': {
+            outline: 'none !important'
+          },
+          '& .MuiCheckbox-root.Mui-checked:not(.MuiCheckbox-indeterminate) svg': {},
+          '& .MuiSvgIcon-root': {
+            fill: colors.primary[200]
           }
         }}
       >
@@ -56,6 +71,9 @@ const Table = () => {
           rows={mockDataTasks}
           columns={columns}
           pageSizeOptions={paginationRowsOptions}
+          disableColumnFilter
+          disableColumnMenu
+          disableColumnResize
         />
       </Box>
     </Box>

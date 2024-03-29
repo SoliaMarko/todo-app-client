@@ -1,5 +1,5 @@
 export const validationError = {
-  NOTE_REQUIRED: 'Note is required',
+  TASK_REQUIRED: 'Task is required',
   PRIORITY_REQUIRED: 'Priority is required',
-  EXPIRATION_REQUIRED: 'Expiration date is required'
+  DEADLINE_REQUIRED: 'Deadline is required'
 };

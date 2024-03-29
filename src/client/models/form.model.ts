@@ -1,6 +1,6 @@
 export class TaskFormModel {
-  public note: string = '';
+  public task: string = '';
   public priority: string = '';
-  public expiration_date: string = '';
+  public deadline: string = '';
   public tags: string[] = [];
 }

@@ -31,26 +31,28 @@ const Form = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="note"
+                id="task"
+                name="task"
+                label="task"
+                value={values.task}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.note}
-                name="note"
-                error={!!touched.note && !!errors.note}
-                helperText={touched.note && errors.note}
-                sx={{gridColumn: 'span 2'}}
+                error={!!touched.task && !!errors.task}
+                helperText={touched.task && errors.task}
+                sx={{gridColumn: 'span 4'}}
               />
               <TextField
                 fullWidth
                 variant="filled"
+                select
+                id="priority"
+                name="priority"
                 label="priority"
+                value={values.priority}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.priority}
-                name="priority"
                 error={!!touched.priority && !!errors.priority}
                 helperText={touched.priority && errors.priority}
-                select
                 sx={{gridColumn: 'span 1'}}
               >
                 {priorityOptions.map((option) => {
@@ -65,13 +67,28 @@ const Form = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) => {
                 fullWidth
                 variant="filled"
                 type="date"
+                id="deadline"
+                name="deadline"
+                value={values.deadline}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.expiration_date}
-                error={!!touched.expiration_date && !!errors.expiration_date}
-                helperText={touched.expiration_date && errors.expiration_date}
-                name="expiration_date"
+                error={!!touched.deadline && !!errors.deadline}
+                helperText={touched.deadline && errors.deadline}
                 sx={{gridColumn: 'span 1'}}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                id="tags"
+                name="tags"
+                label="tags"
+                value={values.tags}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={!!touched.tags && !!errors.tags}
+                helperText={touched.tags && errors.tags}
+                sx={{gridColumn: 'span 2'}}
               />
             </Box>
 
