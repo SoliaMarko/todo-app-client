@@ -1,5 +1,5 @@
 import {Button} from '@mui/material';
-import {SubmitButtonProps} from '../../interfaces/submitButton.interface';
+import {SubmitButtonProps} from '@/interfaces/submitButton.interface';
 
 const SubmitButton = ({handleSubmit, action}: SubmitButtonProps) => {
   return (

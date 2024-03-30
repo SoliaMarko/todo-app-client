@@ -1,10 +1,10 @@
 import {Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
+import {paginationRowsOptions} from '@/constants/table.constant';
+import {renderEditButton, renderDeleteButton} from '@/utils/renderButtons';
 import {mockDataTasks} from '../mockData';
-import {paginationRowsOptions} from '../../constants/table.constant';
 import {themeColors} from '../theme';
-import {renderEditButton, renderDeleteButton} from '../../utils/renderButtons';
 
 const Table = () => {
   const theme = useTheme();
@@ -19,18 +19,22 @@ const Table = () => {
     },
     {field: 'priority', headerName: 'PRIORITY', flex: 2},
     {field: 'deadline', headerName: 'DEADLINE', flex: 2},
-    {field: 'tags', headerName: 'TAGS', flex: 2},
+    {field: 'tags', headerName: 'TAGS', flex: 2, sortable: false},
     {
       field: 'edit-button',
       headerName: '',
+      flex: 1,
       renderCell: () => renderEditButton(),
-      sortable: false
+      sortable: false,
+      selectable: false
     },
     {
       field: 'delete-button',
       headerName: '',
+      flex: 1,
       renderCell: () => renderDeleteButton(),
-      sortable: false
+      sortable: false,
+      selectable: false
     }
   ];
 
@@ -39,6 +43,9 @@ const Table = () => {
       <Box
         height="80vh"
         sx={{
+          '& .MuiDataGrid-root': {
+            fontSize: '1rem'
+          },
           '& .task-column--cell': {
             color: colors.greenAccent[200]
           },

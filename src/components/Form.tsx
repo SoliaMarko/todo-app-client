@@ -1,10 +1,10 @@
 import {Box, TextField, MenuItem, useMediaQuery} from '@mui/material';
 import {Formik} from 'formik';
 import SubmitButton from './buttons/SubmitButton';
-import {taskSchema} from '../validations/form.validation';
-import {TaskAction} from '../enums/taskAction.enum';
-import {TaskFormModel} from '../models/form.model';
-import {priorityOptions} from '../../constants/form.constant';
+import {taskSchema} from '@/validations/form.validation';
+import {TaskAction} from '@/enums/taskAction.enum';
+import {TaskFormModel} from '@/models/form.model';
+import {priorityOptions} from '@/constants/form.constant';
 
 const initialValues = new TaskFormModel();
 

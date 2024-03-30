@@ -1,13 +1,12 @@
 import {NavLink} from 'react-router-dom';
-import {IconButton, useTheme} from '@mui/material';
-import {Box} from '@mui/material';
+import {Box, IconButton, useTheme} from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Form from '../components/Form';
-import {TaskAction} from '../enums/taskAction.enum';
-import {themeColors} from '../theme';
-import {routes} from '../../constants/route.constant';
+import Form from '@/components/Form';
+import {TaskAction} from '@/enums/taskAction.enum';
+import {themeColors} from '@/theme';
+import {routes} from '@/constants/route.constant';
 
-const CreateTask = () => {
+const UpdateTask = () => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
 
@@ -20,9 +19,9 @@ const CreateTask = () => {
           </NavLink>
         </IconButton>
       </Box>
-      <Form action={TaskAction.CREATE} />
+      <Form action={TaskAction.UPDATE} />
     </Box>
   );
 };
 
-export default CreateTask;
+export default UpdateTask;

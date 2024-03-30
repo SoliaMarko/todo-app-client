@@ -1,12 +1,12 @@
 import {Routes, Route} from 'react-router-dom';
 import {CssBaseline, ThemeProvider} from '@mui/material';
-import {ColorModeContext} from './client/theme';
-import {useMode} from './client/hooks/useMode';
-import ThemeTogglerButton from './client/components/buttons/ThemeToggleButton';
-import Overview from './client/pages/Overview';
-import CreateTask from './client/pages/CreateTask';
-import UpdateTask from './client/pages/UpdateTask';
+import {useMode} from './hooks/useMode';
+import ThemeTogglerButton from './components/buttons/ThemeToggleButton';
+import Overview from './pages/Overview';
+import CreateTask from './pages/CreateTask';
+import UpdateTask from './pages/UpdateTask';
 import {routes} from './constants/route.constant';
+import {ColorModeContext} from './theme';
 import './App.css';
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
             <ThemeTogglerButton />
             <Routes>
               <Route path={routes.ROOT} element={<Overview />} />
-              <Route path={routes.CREATE} element={<CreateTask />} />
-              <Route path={routes.UPDATE} element={<UpdateTask />} />
+              <Route path={`${routes.TASK}/${routes.CREATE}`} element={<CreateTask />} />
+              <Route path={`${routes.TASK}/${routes.UPDATE}/:id}`} element={<UpdateTask />} />
             </Routes>
           </main>
         </div>

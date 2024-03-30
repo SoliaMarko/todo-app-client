@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import {validationError} from '../../constants/errorMessages.constant';
+import {validationError} from '@/constants/errorMessages.constant';
 
 export const taskSchema = yup.object().shape({
   task: yup.string().required(validationError.TASK_REQUIRED),

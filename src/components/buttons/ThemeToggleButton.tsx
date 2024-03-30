@@ -2,8 +2,8 @@ import {useContext} from 'react';
 import {Box, IconButton, useTheme} from '@mui/material';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import {ColorModeContext} from '../../theme';
-import {ColorMode} from '../../types/theme.type';
+import {ColorModeContext} from '@/theme';
+import {ColorMode} from '@/types/theme.type';
 
 const ThemeTogglerButton = () => {
   const theme = useTheme();

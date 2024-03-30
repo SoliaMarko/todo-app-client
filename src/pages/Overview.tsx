@@ -1,10 +1,10 @@
 import {Box, IconButton, useTheme} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import {NavLink} from 'react-router-dom';
-import Table from '../components/Table';
-import Filter from '../components/Filter';
-import {themeColors} from '../theme';
-import {routes} from '../../constants/route.constant';
+import Table from '@/components/Table';
+import Filter from '@/components/Filter';
+import {themeColors} from '@/theme';
+import {routes} from '@/constants/route.constant';
 
 const Overview = () => {
   const theme = useTheme();
@@ -17,7 +17,10 @@ const Overview = () => {
       </Box>
       <Box display="flex" justifyContent="flex-end">
         <IconButton>
-          <NavLink to={routes.CREATE} style={({isActive}) => ({color: isActive ? colors.redAccent[500] : colors.greenAccent[300]})}>
+          <NavLink
+            to={`${routes.TASK}/${routes.CREATE}`}
+            style={({isActive}) => ({color: isActive ? colors.redAccent[500] : colors.greenAccent[300]})}
+          >
             <AddIcon />
           </NavLink>
         </IconButton>
