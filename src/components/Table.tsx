@@ -10,20 +10,20 @@ const Table = () => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
   const columns = [
-    {field: 'id', headerName: 'ID', flex: 1},
     {
       field: 'task',
       headerName: 'TASK',
       flex: 4,
       cellClassName: 'task-column--cell'
     },
-    {field: 'priority', headerName: 'PRIORITY', flex: 2},
-    {field: 'deadline', headerName: 'DEADLINE', flex: 2},
-    {field: 'tags', headerName: 'TAGS', flex: 2, sortable: false},
+    {field: 'priority', headerName: 'PRIORITY', flex: 1, cellClassName: 'priority-column--cell'},
+    {field: 'deadline', headerName: 'DEADLINE', flex: 1, cellClassName: 'deadline-column--cell'},
+    {field: 'tags', headerName: 'TAGS', flex: 2, cellClassName: 'tags-column--cell', sortable: false},
     {
       field: 'edit-button',
       headerName: '',
       flex: 1,
+      cellClassName: 'edit-column--cell',
       renderCell: () => renderEditButton(),
       sortable: false,
       selectable: false
@@ -32,6 +32,7 @@ const Table = () => {
       field: 'delete-button',
       headerName: '',
       flex: 1,
+      cellClassName: 'delete-column--cell',
       renderCell: () => renderDeleteButton(),
       sortable: false,
       selectable: false
@@ -39,49 +40,53 @@ const Table = () => {
   ];
 
   return (
-    <Box m="20px">
+    <Box m="20px auto 40px">
       <Box
-        height="80vh"
         sx={{
           '& .MuiDataGrid-root': {
             fontSize: '1rem'
           },
-          '& .task-column--cell': {
-            color: colors.greenAccent[200]
+          '& .MuiDataGrid-root, & .MuiDataGrid-cell:focus-within, & .MuiDataGrid-columnHeader:focus-within, & .MuiDataGrid-columnHeader:focus': {
+            outline: 'none !important'
           },
           '& .MuiDataGrid-columnHeader': {
             backgroundColor: colors.greenAccent[600]
           },
+          '& .task-column--cell': {
+            color: colors.greenAccent[200]
+          },
+          '& .edit-column--cell  .MuiSvgIcon-root': {
+            fill: colors.greenAccent[300]
+          },
+          '& .delete-column--cell  .MuiSvgIcon-root': {
+            fill: colors.redAccent[400]
+          },
+          '& .MuiSvgIcon-root': {
+            fill: colors.primary[200]
+          },
           '& .MuiDataGrid-footerContainer': {
             borderTop: 'none',
             backgroundColor: colors.greenAccent[600]
-          },
-          '& .MuiDataGrid-columnHeader:focus-within, & .MuiDataGrid-columnHeader:focus': {
-            outline: 'none !important'
-          },
-          '& .MuiDataGrid-root, & .MuiDataGrid-cell:focus-within': {
-            outline: 'none !important'
-          },
-          '& .MuiCheckbox-root.Mui-checked:not(.MuiCheckbox-indeterminate) svg': {},
-          '& .MuiSvgIcon-root': {
-            fill: colors.primary[200]
           }
         }}
       >
-        <DataGrid
-          initialState={{
-            pagination: {
-              paginationModel: {pageSize: paginationRowsOptions[0]}
-            }
-          }}
-          checkboxSelection
-          rows={mockDataTasks}
-          columns={columns}
-          pageSizeOptions={paginationRowsOptions}
-          disableColumnFilter
-          disableColumnMenu
-          disableColumnResize
-        />
+        <div style={{height: 611, width: '100%'}}>
+          <DataGrid
+            initialState={{
+              pagination: {
+                paginationModel: {pageSize: paginationRowsOptions[0]}
+              }
+            }}
+            checkboxSelection
+            rows={mockDataTasks}
+            columns={columns}
+            pageSizeOptions={paginationRowsOptions}
+            disableColumnFilter
+            disableColumnMenu
+            disableColumnResize
+            rowHeight={50}
+          />
+        </div>
       </Box>
     </Box>
   );

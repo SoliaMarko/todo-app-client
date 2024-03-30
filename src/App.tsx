@@ -22,7 +22,7 @@ function App() {
             <Routes>
               <Route path={routes.ROOT} element={<Overview />} />
               <Route path={`${routes.TASK}/${routes.CREATE}`} element={<CreateTask />} />
-              <Route path={`${routes.TASK}/${routes.UPDATE}/:id}`} element={<UpdateTask />} />
+              <Route path={`${routes.TASK}/${routes.UPDATE}`} element={<UpdateTask />} />
             </Routes>
           </main>
         </div>
