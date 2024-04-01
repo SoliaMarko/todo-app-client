@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {useMode} from './hooks/useMode';
-import ThemeTogglerButton from './components/buttons/ThemeToggleButton';
+import ThemeTogglerButton from './components/Buttons/ThemeToggleButton';
 import Overview from './pages/Overview';
 import CreateTask from './pages/CreateTask';
 import UpdateTask from './pages/UpdateTask';

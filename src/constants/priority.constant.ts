@@ -1,5 +1,5 @@
 import {Priority} from '@/enums/priority.enum';
-import {PriorityOption} from '@/interfaces/form.interface';
+import {PriorityOption} from '@/interfaces/priority.interface';
 
 export const priorityOptions: PriorityOption[] = [
   {value: Priority.Low, label: 'Low'},
