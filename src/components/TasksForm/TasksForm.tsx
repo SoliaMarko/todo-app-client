@@ -1,12 +1,15 @@
 import {Box, useMediaQuery} from '@mui/material';
-import {Formik, FieldArray} from 'formik';
+import {Formik} from 'formik';
 import SubmitButton from '../Buttons/SubmitButton';
 import {taskSchema} from '@/validations/form.validation';
 import {TaskAction} from '@/enums/taskAction.enum';
 import {TaskFormModel} from '@/models/taskForm.model';
 import {priorityOptions} from '@/constants/priority.constant';
-import TagsInput from './TagsInput';
-import FormInput from './FormInput';
+import DateInput from './DateInput';
+import MultipleAutocompleteInput from './MultipleAutocompleteInput';
+import {tagOptions as tags} from '@/constants/tags.constant';
+import TextInput from './TextInput';
+import SelectInput from './SelectInput';
 
 const initialValues = new TaskFormModel();
 
@@ -30,12 +33,12 @@ const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) =>
                 '& > div': {gridColumn: isNonMobile ? undefined : 'span 4'}
               }}
             >
-              <FormInput type="text" name="task" props={props} cols={4} />
-              <FormInput options={priorityOptions} name="priority" props={props} cols={1} />
-              <FormInput type="date" name="deadline" props={props} cols={1} />
-              <FieldArray name="tags">{() => <TagsInput />}</FieldArray>
+              <TextInput type="text" name="task" props={props} cols={4} />
+              <SelectInput options={priorityOptions} name="priority" props={props} cols={1} />
+              <DateInput name="deadline" />
+              <MultipleAutocompleteInput options={tags} name="tags" cols={2} />
             </Box>
-            <Box display="flex" justifyContent="end" mt="20px">
+            <Box display="flex" justifyContent="end" mt="30px">
               <SubmitButton handleSubmit={handleFormSubmit} action={action === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
             </Box>
           </form>
