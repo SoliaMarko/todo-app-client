@@ -23,7 +23,14 @@ const TagsInput = () => {
 
   return (
     <>
-      <TextField type="text" id="tags" name="tags" label="tags" onKeyDown={(e) => handleAddTag(e)} sx={{gridColumn: 'span 2'}} />
+      <TextField
+        type="text"
+        id="tags"
+        name="tags"
+        label="tags"
+        onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => handleAddTag(e)}
+        sx={{gridColumn: 'span 2'}}
+      />
       <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
         <Box mr="30px" p="12px 30px" borderRadius="4px" sx={{backgroundColor: colors.blueAccent[600]}}>
           <Typography>Tags:</Typography>
