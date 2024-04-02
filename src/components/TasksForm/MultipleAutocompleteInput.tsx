@@ -1,6 +1,6 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-import {MultipleAutocompleteInputProps} from '@/interfaces/multipleAutocompleteInputProps.interface';
+import {MultipleAutocompleteInputProps} from '@/interfaces/formInterfaces/multipleAutocompleteInputProps.interface';
 
 const MultipleAutocompleteInput = ({options, name, cols = 2}: MultipleAutocompleteInputProps) => {
   return (

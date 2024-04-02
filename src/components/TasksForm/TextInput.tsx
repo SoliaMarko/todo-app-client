@@ -1,5 +1,5 @@
 import {TextField} from '@mui/material';
-import {TextInputProps} from '@/interfaces/taskFieldProps.interface';
+import {TextInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
 
 const TextInput = ({type, name, props, cols}: TextInputProps) => {
   const field = {

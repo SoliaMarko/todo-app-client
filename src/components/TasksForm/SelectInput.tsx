@@ -1,5 +1,5 @@
 import {TextField, MenuItem} from '@mui/material';
-import {SelectInputProps} from '@/interfaces/taskFieldProps.interface';
+import {SelectInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
 
 const SelectInput = ({options, name, props, cols}: SelectInputProps) => {
   const field = {

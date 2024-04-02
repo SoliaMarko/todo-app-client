@@ -1,5 +1,5 @@
 import {Tags} from '@/enums/tags.enum';
-import {TagOption} from '@/interfaces/tag.interface';
+import {TagOption} from '@/interfaces/optionsInterfaces/tag.interface';
 
 export const tagOptions: TagOption[] = [
   {value: Tags.Study, label: 'Study'},

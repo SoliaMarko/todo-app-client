@@ -3,7 +3,7 @@ import {Box, IconButton, useTheme} from '@mui/material';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import {ColorModeContext} from '@/theme';
-import {ColorMode} from '@/interfaces/theme.interface';
+import {ColorMode} from '@/interfaces/globalInterfaces/theme.interface';
 
 const ThemeToggleButton = () => {
   const theme = useTheme();

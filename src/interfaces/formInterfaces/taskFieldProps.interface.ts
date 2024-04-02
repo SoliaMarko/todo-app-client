@@ -1,4 +1,4 @@
-import {PriorityOption} from './priority.interface';
+import {PriorityOption} from '../optionsInterfaces/priority.interface';
 
 export interface SelectInputProps {
   options: Array<PriorityOption>;
