@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {useMode} from './hooks/useMode';
-import ThemeTogglerButton from './components/buttons/ThemeToggleButton';
+import ThemeToggleButton from './components/Buttons/ThemeToggleButton';
 import Overview from './pages/Overview';
 import CreateTask from './pages/CreateTask';
 import UpdateTask from './pages/UpdateTask';
@@ -18,7 +18,7 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className="content">
-            <ThemeTogglerButton />
+            <ThemeToggleButton />
             <Routes>
               <Route path={routes.ROOT} element={<Overview />} />
               <Route path={`${routes.TASK}/${routes.CREATE}`} element={<CreateTask />} />

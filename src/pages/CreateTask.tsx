@@ -2,7 +2,7 @@ import {NavLink} from 'react-router-dom';
 import {IconButton, useTheme} from '@mui/material';
 import {Box} from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Form from '@components/Form';
+import TasksForm from '@/components/TasksForm/TasksForm';
 import {TaskAction} from '@/enums/taskAction.enum';
 import {themeColors} from '@/theme';
 import {routes} from '@/constants/route.constant';
@@ -20,7 +20,7 @@ const CreateTask = () => {
           </NavLink>
         </IconButton>
       </Box>
-      <Form action={TaskAction.CREATE} />
+      <TasksForm action={TaskAction.CREATE} />
     </Box>
   );
 };

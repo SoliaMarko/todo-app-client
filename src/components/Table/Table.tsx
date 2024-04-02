@@ -3,8 +3,8 @@ import {useTheme} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
 import {paginationRowsOptions} from '@/constants/table.constant';
 import {renderEditButton, renderDeleteButton} from '@/utils/renderButtons';
-import {mockDataTasks} from '../mockData';
-import {themeColors} from '../theme';
+import {mockDataTasks} from '../../mockData';
+import {themeColors} from '../../theme';
 
 const Table = () => {
   const theme = useTheme();

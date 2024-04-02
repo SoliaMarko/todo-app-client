@@ -1,8 +1,8 @@
 import {Box, IconButton, useTheme} from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import {NavLink} from 'react-router-dom';
-import Table from '@/components/Table';
-import Filter from '@/components/Filter';
+import Table from '@/components/Table/Table';
+import Filter from '@/components/Filter/Filter';
 import {themeColors} from '@/theme';
 import {routes} from '@/constants/route.constant';
 

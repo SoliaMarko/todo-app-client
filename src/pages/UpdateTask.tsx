@@ -1,7 +1,7 @@
 import {NavLink} from 'react-router-dom';
 import {Box, IconButton, useTheme} from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Form from '@/components/Form';
+import TasksForm from '@/components/TasksForm/TasksForm';
 import {TaskAction} from '@/enums/taskAction.enum';
 import {themeColors} from '@/theme';
 import {routes} from '@/constants/route.constant';
@@ -19,7 +19,7 @@ const UpdateTask = () => {
           </NavLink>
         </IconButton>
       </Box>
-      <Form action={TaskAction.UPDATE} />
+      <TasksForm action={TaskAction.UPDATE} />
     </Box>
   );
 };
