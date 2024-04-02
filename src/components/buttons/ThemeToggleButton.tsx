@@ -5,7 +5,7 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import {ColorModeContext} from '@/theme';
 import {ColorMode} from '@/types/theme.type';
 
-const ThemeTogglerButton = () => {
+const ThemeToggleButton = () => {
   const theme = useTheme();
   const colorMode: ColorMode = useContext(ColorModeContext);
 
@@ -18,4 +18,4 @@ const ThemeTogglerButton = () => {
   );
 };
 
-export default ThemeTogglerButton;
+export default ThemeToggleButton;
