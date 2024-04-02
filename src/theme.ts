@@ -118,7 +118,6 @@ export const themeColors = (mode: 'dark' | 'light') => ({
       })
 });
 
-// mui themeColors settings
 export const themeSettings = (mode: 'dark' | 'light') => {
   const colors = themeColors(mode);
 

@@ -1,3 +1,5 @@
-export const NOTE_REQUIRED = 'Note is required';
-export const PRIORITY_REQUIRED = 'Priority is required';
-export const EXPIRATION_REQUIRED = 'Expiration date is required';
+export const validationError = {
+  TASK_REQUIRED: 'Task is required',
+  PRIORITY_REQUIRED: 'Priority is required',
+  DEADLINE_REQUIRED: 'Deadline is required'
+};
