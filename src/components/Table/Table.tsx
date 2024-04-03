@@ -28,6 +28,7 @@ const Table = () => {
             disableColumnFilter
             disableColumnMenu
             disableColumnResize
+            disableRowSelectionOnClick
             rowHeight={50}
           />
         </div>
