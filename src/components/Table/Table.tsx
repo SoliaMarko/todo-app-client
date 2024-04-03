@@ -22,7 +22,6 @@ const Table = () => {
                 paginationModel: {pageSize: paginationRowsOptions[0]}
               }
             }}
-            checkboxSelection
             rows={mockDataTasks}
             columns={columns}
             pageSizeOptions={paginationRowsOptions}

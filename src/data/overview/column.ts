@@ -1,4 +1,5 @@
-import {renderEditButton, renderDeleteButton} from '@/utils/renderButtons';
+import {statusOptions} from '@/constants/status.constant';
+import {renderEditButton, renderDeleteButton, renderRadioButtons} from '@/utils/renderButtons';
 
 export const columns = [
   {
@@ -7,6 +8,7 @@ export const columns = [
     flex: 4,
     cellClassName: 'task-column--cell'
   },
+  {field: 'status', headerName: 'STATUS', flex: 2, renderCell: () => renderRadioButtons(statusOptions)},
   {field: 'priority', headerName: 'PRIORITY', flex: 1, cellClassName: 'priority-column--cell'},
   {field: 'deadline', headerName: 'DEADLINE', flex: 1, cellClassName: 'deadline-column--cell'},
   {field: 'tags', headerName: 'TAGS', flex: 2, cellClassName: 'tags-column--cell', sortable: false},

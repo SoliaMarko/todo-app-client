@@ -5,11 +5,11 @@ import {taskSchema} from '@/validations/form.validation';
 import {TaskAction} from '@/enums/taskAction.enum';
 import {TaskFormModel} from '@/models/taskForm.model';
 import {priorityOptions} from '@/constants/priority.constant';
-import DateInput from './DateInput';
-import MultipleAutocompleteInput from './MultipleAutocompleteInput';
 import {tagOptions as tags} from '@/constants/tags.constant';
 import TextInput from './TextInput';
 import SelectInput from './SelectInput';
+import DateInput from './DateInput';
+import MultipleAutocompleteInput from './MultipleAutocompleteInput';
 
 const initialValues = new TaskFormModel();
 
