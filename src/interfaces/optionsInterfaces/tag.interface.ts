@@ -1,4 +1,4 @@
-import {Tags} from '@/enums/tags.enum';
+import {Tags} from '@/enums/optionsEnums/tags.enum';
 
 export interface TagOption {
   value: Tags;

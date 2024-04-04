@@ -14,6 +14,11 @@ export const useTableStyles = (colors: PaletteColorScale) => {
     '& .task-column--cell': {
       color: colors.greenAccent[200]
     },
+    '& .tags-column--cell': {
+      color: colors.blueAccent[300],
+      display: 'flex',
+      alignItems: 'center'
+    },
     '& .edit-column--cell  .MuiSvgIcon-root': {
       fill: colors.greenAccent[300]
     },

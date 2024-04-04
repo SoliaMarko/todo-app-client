@@ -1,6 +1,6 @@
-import {Priority} from '@/enums/priority.enum';
-import {Status} from '@/enums/status.enum';
-import {Tags} from '@/enums/tags.enum';
+import {Priority} from '@/enums/optionsEnums/priority.enum';
+import {Status} from '@/enums/optionsEnums/status.enum';
+import {Tags} from '@/enums/optionsEnums/tags.enum';
 
 export interface TaskData {
   _id: number;

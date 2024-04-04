@@ -1,6 +1,6 @@
 import {Box} from '@mui/material';
 import Table from '@/components/Table/Table';
-import Filter from '@/components/Filter/Filter';
+import Filter from '@/features/Filter/Filter';
 import AddButton from '@/components/Buttons/AddButton';
 import {routes} from '@/constants/route.constant';
 

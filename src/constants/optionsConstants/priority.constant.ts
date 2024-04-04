@@ -1,4 +1,4 @@
-import {Priority} from '@/enums/priority.enum';
+import {Priority} from '@/enums/optionsEnums/priority.enum';
 import {PriorityOption} from '@/interfaces/optionsInterfaces/priority.interface';
 
 export const priorityOptions: PriorityOption[] = [

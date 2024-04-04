@@ -1,4 +1,4 @@
-import {Status} from '@/enums/status.enum';
+import {Status} from '@/enums/optionsEnums/status.enum';
 import {StatusOption} from '@/interfaces/optionsInterfaces/status.interface';
 
 export const statusOptions: StatusOption[] = [

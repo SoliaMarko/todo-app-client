@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Radio, Tooltip} from '@mui/material';
 import {StatusOption} from '@/interfaces/optionsInterfaces/status.interface';
-import {statusOptions} from '@/constants/status.constant';
+import {statusOptions} from '@/constants/optionsConstants/status.constant';
 
 const RadioButtons = ({options}: {options: StatusOption[]}) => {
   const [selectedValue, setSelectedValue] = useState(statusOptions[0].label);

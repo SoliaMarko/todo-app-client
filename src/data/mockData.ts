@@ -29,7 +29,7 @@ export const mockDataTasks = [
     status: 3,
     priority: 3,
     deadline: '28-03-2024',
-    tags: [2, 1, 4]
+    tags: [1, 4]
   },
   {
     _id: 5,

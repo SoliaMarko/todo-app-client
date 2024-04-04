@@ -1,4 +1,4 @@
-import {Priority} from '@/enums/priority.enum';
+import {Priority} from '@/enums/optionsEnums/priority.enum';
 
 export interface PriorityOption {
   value: Priority;
