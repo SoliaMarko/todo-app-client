@@ -15,7 +15,7 @@ const Table = () => {
   return (
     <Box m="20px auto 40px">
       <Box sx={{...tableStyles}}>
-        <div style={{height: 611, width: '100%'}}>
+        <Box sx={{height: 611, width: '100%'}}>
           <DataGrid
             initialState={{
               pagination: {
@@ -31,7 +31,7 @@ const Table = () => {
             disableRowSelectionOnClick
             rowHeight={50}
           />
-        </div>
+        </Box>
       </Box>
     </Box>
   );

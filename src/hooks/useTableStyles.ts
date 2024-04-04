@@ -20,9 +20,6 @@ export const useTableStyles = (colors: PaletteColorScale) => {
     '& .delete-column--cell  .MuiSvgIcon-root': {
       fill: colors.redAccent[400]
     },
-    '& .MuiSvgIcon-root': {
-      fill: colors.primary[200]
-    },
     '& .MuiDataGrid-footerContainer': {
       borderTop: 'none',
       backgroundColor: colors.greenAccent[600]
