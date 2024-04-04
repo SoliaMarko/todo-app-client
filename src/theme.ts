@@ -138,7 +138,7 @@ export const themeSettings = (mode: 'dark' | 'light') => {
               light: colors.grey[100]
             },
             background: {
-              default: colors.primary[500]
+              default: colors.primary[600]
             }
           }
         : {
@@ -154,7 +154,7 @@ export const themeSettings = (mode: 'dark' | 'light') => {
               light: colors.grey[100]
             },
             background: {
-              default: '#fcfcfc'
+              default: colors.greenAccent[900]
             }
           })
     }

@@ -6,6 +6,7 @@ export interface SelectInputProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: any;
   cols: number;
+  isRequired: boolean;
 }
 
 export interface TextInputProps {
@@ -14,4 +15,5 @@ export interface TextInputProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props: any;
   cols: number;
+  isRequired: boolean;
 }

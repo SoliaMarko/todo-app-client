@@ -33,9 +33,9 @@ const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) =>
                 '& > div': {gridColumn: isNonMobile ? undefined : 'span 4'}
               }}
             >
-              <TextInput type="text" name="task" props={props} cols={4} />
-              <SelectInput options={priorityOptions} name="priority" props={props} cols={1} />
-              <DateInput name="deadline" />
+              <TextInput type="text" name="task" props={props} cols={4} isRequired={true} />
+              <SelectInput options={priorityOptions} name="priority" props={props} cols={1} isRequired={true} />
+              <DateInput name="deadline" isRequired={true} />
               <MultipleAutocompleteInput options={tags} name="tags" cols={2} />
             </Box>
             <Box display="flex" justifyContent="end" mt="30px">

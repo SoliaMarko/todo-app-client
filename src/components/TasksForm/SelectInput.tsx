@@ -1,7 +1,7 @@
 import {TextField, MenuItem} from '@mui/material';
 import {SelectInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
 
-const SelectInput = ({options, name, props, cols}: SelectInputProps) => {
+const SelectInput = ({options, name, props, cols, isRequired}: SelectInputProps) => {
   const field = {
     name,
     id: name,
@@ -18,6 +18,7 @@ const SelectInput = ({options, name, props, cols}: SelectInputProps) => {
       error={!!props.touched[name] && !!props.errors[name]}
       helperText={props.touched[name] && props.errors[name]}
       sx={{gridColumn: `span ${cols}`}}
+      required={isRequired}
     >
       {options.map((option) => {
         return (

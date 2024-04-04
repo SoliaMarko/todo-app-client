@@ -1,135 +1,106 @@
 export const mockDataTasks = [
   {
-    id: 1,
+    _id: 1,
     task: 'Fix Alias',
-    priority: 'low',
+    status: 1,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['internship']
+    tags: [1]
   },
   {
-    id: 2,
+    _id: 2,
     task: 'Deploy Server',
-    priority: 'medium',
+    status: 2,
+    priority: 2,
     deadline: '27-03-2024',
-    tags: ['fun']
+    tags: [2]
   },
   {
-    id: 3,
+    _id: 3,
     task: 'Implement ability to create multiple tasks from one page',
-    priority: 'hight',
+    status: 3,
+    priority: 1,
     deadline: '28-03-2024',
-    tags: ['work', 'fun']
+    tags: [5, 3]
   },
   {
-    id: 4,
+    _id: 4,
     task: 'Add Tags Form Fields',
-    priority: 'critical',
+    status: 3,
+    priority: 3,
     deadline: '28-03-2024',
-    tags: ['study']
+    tags: [2, 1, 4]
   },
   {
-    id: 5,
+    _id: 5,
     task: 'Setup Connection to the DB',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 6,
-    task: ' Implement GET all API',
-    priority: 'critical',
+    _id: 6,
+    task: 'Implement GET all API',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 7,
+    _id: 7,
     task: 'Implement POST (create task) API',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 8,
-    task: 'Implement GET task (by id) API',
-    priority: 'critical',
+    _id: 8,
+    task: 'Implement GET task (by _id) API',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 9,
+    _id: 9,
     task: 'Implement PUT (update task) API',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 10,
+    _id: 10,
     task: 'Bug Fixes',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['fun']
+    tags: [4]
   },
   {
-    id: 11,
+    _id: 11,
     task: 'Bug Fixes',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['study']
+    tags: [2]
   },
   {
-    id: 12,
+    _id: 12,
     task: 'Bug Fixes',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['fun']
+    tags: [2]
   },
   {
-    id: 13,
+    _id: 13,
     task: 'Bug Fixes',
-    priority: 'critical',
+    status: 3,
+    priority: 4,
     deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 14,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 15,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 16,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 17,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 18,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
-  },
-  {
-    id: 19,
-    task: 'Bug Fixes',
-    priority: 'critical',
-    deadline: '27-03-2024',
-    tags: ['fun']
+    tags: [3]
   }
 ];

@@ -1,7 +1,7 @@
 import {TextField} from '@mui/material';
 import {TextInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
 
-const TextInput = ({type, name, props, cols}: TextInputProps) => {
+const TextInput = ({type, name, props, cols, isRequired}: TextInputProps) => {
   const field = {
     name,
     id: name,
@@ -18,6 +18,7 @@ const TextInput = ({type, name, props, cols}: TextInputProps) => {
       error={!!props.touched[name] && !!props.errors[name]}
       helperText={props.touched[name] && props.errors[name]}
       sx={{gridColumn: `span ${cols}`}}
+      required={isRequired}
     />
   );
 };

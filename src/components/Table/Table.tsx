@@ -6,6 +6,7 @@ import {mockDataTasks} from '../../data/mockData';
 import {themeColors} from '../../theme';
 import {useTableStyles} from '@/hooks/useTableStyles';
 import {columns} from '@/data/overview/column';
+import getFormatedData from '@/utils/getFormattedData';
 
 const Table = () => {
   const theme = useTheme();
@@ -22,14 +23,16 @@ const Table = () => {
                 paginationModel: {pageSize: paginationRowsOptions[0]}
               }
             }}
-            rows={mockDataTasks}
+            rows={getFormatedData(mockDataTasks)}
             columns={columns}
-            pageSizeOptions={paginationRowsOptions}
+            getRowId={(row) => row._id}
             disableColumnFilter
             disableColumnMenu
             disableColumnResize
             disableRowSelectionOnClick
+            pageSizeOptions={paginationRowsOptions}
             rowHeight={50}
+            sx={{backgroundColor: theme.palette.mode === 'dark' ? colors.primary[500] : '#f5faf9'}}
           />
         </Box>
       </Box>

@@ -1,33 +1,42 @@
 import {statusOptions} from '@/constants/status.constant';
-import {renderEditButton, renderDeleteButton, renderRadioButtons} from '@/utils/renderButtons';
+import {renderRadioButtons, renderActionsButtons} from '@/utils/renderButtons';
+import {GridColDef} from '@mui/x-data-grid';
 
-export const columns = [
+export const columns: GridColDef[] = [
   {
     field: 'task',
-    headerName: 'TASK',
+    headerName: 'Task',
     flex: 5,
     cellClassName: 'task-column--cell'
   },
-  {field: 'status', headerName: 'STATUS', flex: 2, renderCell: () => renderRadioButtons(statusOptions)},
-  {field: 'priority', headerName: 'PRIORITY', flex: 2, cellClassName: 'priority-column--cell'},
-  {field: 'deadline', headerName: 'DEADLINE', flex: 2, cellClassName: 'deadline-column--cell'},
-  {field: 'tags', headerName: 'TAGS', flex: 2, cellClassName: 'tags-column--cell', sortable: false},
   {
-    field: 'edit-button',
-    headerName: '',
-    flex: 0.5,
-    cellClassName: 'edit-column--cell',
-    renderCell: () => renderEditButton(),
-    sortable: false,
-    selectable: false
+    field: 'status',
+    headerName: 'Status',
+    headerAlign: 'center',
+    flex: 2,
+    align: 'center',
+    renderCell: () => renderRadioButtons(statusOptions),
+    sortable: false
   },
   {
-    field: 'delete-button',
-    headerName: '',
-    flex: 0.5,
-    cellClassName: 'delete-column--cell',
-    renderCell: () => renderDeleteButton(),
-    sortable: false,
-    selectable: false
+    field: 'priority',
+    headerName: 'Priority',
+    headerAlign: 'center',
+    flex: 2,
+    align: 'center',
+    cellClassName: 'priority-column--cell',
+    sortable: false
+  },
+  {field: 'deadline', headerName: 'Deadline', headerAlign: 'center', flex: 2, align: 'center', cellClassName: 'deadline-column--cell'},
+  {field: 'tags', headerName: 'Tags', headerAlign: 'center', flex: 2, align: 'center', cellClassName: 'tags-column--cell', sortable: false},
+  {
+    field: 'actions',
+    headerName: 'Actions',
+    headerAlign: 'center',
+    flex: 1,
+    align: 'center',
+    cellClassName: 'actions-column--cell',
+    renderCell: () => renderActionsButtons(),
+    sortable: false
   }
 ];
