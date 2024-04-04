@@ -1,4 +1,5 @@
 import {renderEditButton, renderDeleteButton} from '@/utils/renderButtons';
+import {routes} from '@/constants/route.constant';
 
 export const columns = [
   {
@@ -15,7 +16,7 @@ export const columns = [
     headerName: '',
     flex: 1,
     cellClassName: 'edit-column--cell',
-    renderCell: () => renderEditButton(),
+    renderCell: () => renderEditButton(`${routes.TASK}/${routes.UPDATE}`),
     sortable: false,
     selectable: false
   },
