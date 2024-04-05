@@ -1,12 +1,9 @@
-import {Routes, Route} from 'react-router-dom';
+import {RouterProvider} from 'react-router-dom';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {useMode} from './hooks/useMode';
 import ThemeToggleButton from './components/Buttons/ThemeToggleButton';
-import Overview from './pages/Overview';
-import CreateTask from './pages/CreateTask';
-import UpdateTask from './pages/UpdateTask';
-import {routes} from './constants/route.constant';
 import {ColorModeContext} from './theme';
+import router from './router';
 import './App.css';
 
 function App() {
@@ -19,11 +16,7 @@ function App() {
         <div className="app">
           <main className="content">
             <ThemeToggleButton />
-            <Routes>
-              <Route path={routes.ROOT} element={<Overview />} />
-              <Route path={`${routes.TASK}/${routes.CREATE}`} element={<CreateTask />} />
-              <Route path={`${routes.TASK}/${routes.UPDATE}`} element={<UpdateTask />} />
-            </Routes>
+            <RouterProvider router={router} />
           </main>
         </div>
       </ThemeProvider>
