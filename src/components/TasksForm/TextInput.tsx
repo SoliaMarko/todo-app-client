@@ -1,12 +1,13 @@
 import {TextField} from '@mui/material';
 import {TextInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
+import {ReactNode} from 'react';
 
-const TextInput = ({type, name, props, cols, isRequired}: TextInputProps) => {
+const TextInput = <T,>({type, name, props, cols, isRequired}: TextInputProps<T>) => {
   const field = {
     name,
     id: name,
     label: name,
-    value: props.values[name],
+    value: props.values[name as keyof T],
     onChange: props.handleChange,
     onBlur: props.handleBlur
   };
@@ -15,8 +16,8 @@ const TextInput = ({type, name, props, cols, isRequired}: TextInputProps) => {
     <TextField
       type={type}
       {...field}
-      error={!!props.touched[name] && !!props.errors[name]}
-      helperText={props.touched[name] && props.errors[name]}
+      error={!!props.touched[name as keyof T] && !!props.errors[name as keyof T]}
+      helperText={(props.touched[name as keyof T] && props.errors[name as keyof T]) as ReactNode}
       sx={{gridColumn: `span ${cols}`}}
       required={isRequired}
     />

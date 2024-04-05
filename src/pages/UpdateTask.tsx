@@ -10,7 +10,7 @@ const UpdateTask = () => {
       <Box display="flex" justifyContent="flex-start">
         <ArrowBackButton path={routes.ROOT} />
       </Box>
-      <TasksForm action={TaskAction.UPDATE} />
+      <TasksForm title={TaskAction.UPDATE} />
     </Box>
   );
 };

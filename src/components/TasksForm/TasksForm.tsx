@@ -13,7 +13,7 @@ import MultipleAutocompleteInput from './MultipleAutocompleteInput';
 
 const initialValues = new TaskFormModel();
 
-const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) => {
+const TasksForm = ({title}: {title: TaskAction.CREATE | TaskAction.UPDATE}) => {
   const isNonMobile = useMediaQuery('(min-width: 600px');
 
   const handleFormSubmit = () => {
@@ -39,7 +39,7 @@ const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) =>
               <MultipleAutocompleteInput options={tags} name="tags" cols={2} />
             </Box>
             <Box display="flex" justifyContent="end" mt="30px">
-              <SubmitButton handleSubmit={handleFormSubmit} action={action === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
+              <SubmitButton handleSubmit={handleFormSubmit} title={title === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
             </Box>
           </form>
         )}

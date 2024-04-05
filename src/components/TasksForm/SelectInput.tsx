@@ -1,12 +1,13 @@
 import {TextField, MenuItem} from '@mui/material';
 import {SelectInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
+import {ReactNode} from 'react';
 
-const SelectInput = ({options, name, props, cols, isRequired}: SelectInputProps) => {
+const SelectInput = <T,>({options, name, props, cols, isRequired}: SelectInputProps<T>) => {
   const field = {
     name,
     id: name,
     label: name,
-    value: props.values[name],
+    value: props.values[name as keyof T],
     onChange: props.handleChange,
     onBlur: props.handleBlur
   };
@@ -15,8 +16,8 @@ const SelectInput = ({options, name, props, cols, isRequired}: SelectInputProps)
     <TextField
       select
       {...field}
-      error={!!props.touched[name] && !!props.errors[name]}
-      helperText={props.touched[name] && props.errors[name]}
+      error={!!props.touched[name as keyof T] && !!props.errors[name as keyof T]}
+      helperText={(props.touched[name as keyof T] && props.errors[name as keyof T]) as ReactNode}
       sx={{gridColumn: `span ${cols}`}}
       required={isRequired}
     >
