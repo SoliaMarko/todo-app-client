@@ -3,8 +3,8 @@ import {GridColDef} from '@mui/x-data-grid';
 import RadioButtons from '@/components/Buttons/RadioButtons';
 import EditButton from '@/components/Buttons/EditButton';
 import DeleteButton from '@/components/Buttons/DeleteButton';
-import ChipList from '@/features/Filter/ChipList';
-import AvatarLetterWithText from '@/features/Filter/AvatarLetterWithText';
+import ChipList from '@/features/ChipList';
+import AvatarLetterWithText from '@/features/AvatarLetterWithText';
 
 export const columns: GridColDef[] = [
   {
