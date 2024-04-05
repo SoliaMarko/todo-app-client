@@ -4,19 +4,20 @@ import RadioButtons from '@/components/Buttons/RadioButtons';
 import EditButton from '@/components/Buttons/EditButton';
 import DeleteButton from '@/components/Buttons/DeleteButton';
 import ChipList from '@/features/Filter/ChipList';
+import AvatarLetterWithText from '@/features/Filter/AvatarLetterWithText';
 
 export const columns: GridColDef[] = [
   {
     field: 'task',
     headerName: 'Task',
-    flex: 4,
+    flex: 3.5,
     cellClassName: 'task-column--cell'
   },
   {
     field: 'status',
     headerName: 'Status',
     headerAlign: 'center',
-    flex: 2,
+    flex: 1.5,
     align: 'center',
     renderCell: () => <RadioButtons options={statusOptions} />,
     sortable: false
@@ -25,18 +26,19 @@ export const columns: GridColDef[] = [
     field: 'priority',
     headerName: 'Priority',
     headerAlign: 'center',
-    flex: 2,
+    flex: 1.5,
     align: 'center',
     cellClassName: 'priority-column--cell',
+    renderCell: ({row}) => <AvatarLetterWithText text={row.priority} />,
     sortable: false
   },
-  {field: 'deadline', headerName: 'Deadline', headerAlign: 'center', flex: 2, align: 'center', cellClassName: 'deadline-column--cell'},
+  {field: 'deadline', headerName: 'Deadline', headerAlign: 'center', flex: 1.5, align: 'center', cellClassName: 'deadline-column--cell'},
   {
     field: 'tags',
     headerName: 'Tags',
     headerAlign: 'center',
     flex: 2,
-    align: 'center',
+    align: 'left',
     cellClassName: 'tags-column--cell',
     renderCell: ({row}) => <ChipList list={row.tags} />,
     sortable: false
@@ -50,10 +52,10 @@ export const columns: GridColDef[] = [
     display: 'flex',
     cellClassName: 'actions-column--cell',
     renderCell: () => (
-      <>
+      <div>
         <EditButton />
         <DeleteButton />
-      </>
+      </div>
     ),
     sortable: false
   }
