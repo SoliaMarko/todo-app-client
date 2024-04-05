@@ -1,17 +1,18 @@
+import {FormProps} from 'react-router-dom';
 import {PriorityOption} from '../optionsInterfaces/priority.interface';
+import {FormikProps} from 'formik';
+import {TaskFormModel} from '@/models/taskForm.model';
 
-export interface SelectInputProps {
+export interface SelectInputProps extends FormProps {
   options: Array<PriorityOption>;
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props: any;
   cols: number;
+  props: FormikProps<TaskFormModel>;
 }
 
-export interface TextInputProps {
+export interface TextInputProps extends FormProps {
   type?: string;
   name: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props: any;
+  props: FormikProps<TaskFormModel>;
   cols: number;
 }

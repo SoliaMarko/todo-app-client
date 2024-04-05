@@ -39,7 +39,11 @@ const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) =>
               <MultipleAutocompleteInput options={tags} name="tags" cols={2} />
             </Box>
             <Box display="flex" justifyContent="end" mt="30px">
-              <SubmitButton handleSubmit={handleFormSubmit} action={action === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
+              <SubmitButton
+                handleSubmit={handleFormSubmit}
+                action={action === TaskAction.CREATE ? 'Create New Task' : 'Update Task'}
+                title={TaskAction.CREATE || TaskAction.UPDATE}
+              />
             </Box>
           </form>
         )}
