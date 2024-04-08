@@ -5,7 +5,6 @@ import UpdateTask from './pages/UpdateTask';
 import Error from './features/Error';
 import {routes} from './constants/global.constant';
 import AppLayout from './pages/AppLayout';
-// import {loader as allTasksLoader} from './services/getAllTasks.service';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +14,6 @@ const router = createBrowserRouter([
       {
         path: routes.ROOT,
         element: <Overview />
-        // loader: allTasksLoader
       },
       {
         path: `${routes.TASK}/${routes.CREATE}`,
