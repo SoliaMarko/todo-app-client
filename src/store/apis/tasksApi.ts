@@ -21,20 +21,23 @@ const tasksApi = createApi({
         })
       }),
       createTask: builder.mutation({
-        query: (task) => ({
-          url: '/',
-          method: 'POST',
-          body: task,
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-          }
-        })
+        query: (task) => {
+          delete task._id;
+          return {
+            url: '/',
+            method: 'POST',
+            body: JSON.stringify(task),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8'
+            }
+          };
+        }
       }),
       updateTask: builder.mutation({
         query: (task) => ({
           url: `/${task._id}`,
           method: 'PUT',
-          body: task
+          body: JSON.stringify(task)
         })
       }),
       updateTaskStatus: builder.mutation({

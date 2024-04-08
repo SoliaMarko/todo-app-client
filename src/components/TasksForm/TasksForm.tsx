@@ -26,6 +26,7 @@ const TasksForm = ({title, task}: TaskFormProps) => {
   const handleFormSubmit = (values: TaskFormModel): void => {
     if (title === 'create') {
       values.deadline = getISODateFromStr(values.deadline);
+
       addNewTask(Object.assign({}, values));
       <Navigate to={`${routes.ROOT}`} replace={true} />;
     }
