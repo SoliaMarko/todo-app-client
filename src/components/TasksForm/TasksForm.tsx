@@ -17,11 +17,11 @@ import {getDateFrom, getISODateFromStr} from '@/utils/getFormattedDate';
 import {useCreateTaskMutation, useUpdateTaskMutation} from '@/store';
 import {routes} from '@/constants/global.constant';
 
-const TasksForm = ({title, taskData}: TaskFormProps) => {
+const TasksForm = ({title, task}: TaskFormProps) => {
   const [addNewTask] = useCreateTaskMutation();
   const [updateTask] = useUpdateTaskMutation();
   const isNonMobile = useMediaQuery('(min-width: 600px');
-  const initialValues = taskData ? {...taskData} : new TaskFormModel();
+  const initialValues = task ? {...task} : new TaskFormModel();
 
   const handleFormSubmit = (values: TaskFormModel): void => {
     if (title === 'create') {
@@ -54,7 +54,7 @@ const TasksForm = ({title, taskData}: TaskFormProps) => {
               <MultipleAutocompleteInput options={tags} name="tags" cols={2} values={props.values} />
             </Box>
             <Box display="flex" justifyContent="end" mt="30px">
-              <SubmitButton handleSubmit={handleFormSubmit} title={title === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
+              <SubmitButton title={title === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
             </Box>
           </form>
         )}

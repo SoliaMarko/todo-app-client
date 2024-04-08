@@ -8,11 +8,11 @@ import {paginationRowsOptions} from '@/constants/global.constant';
 import {ApiTaskRow} from '@/interfaces/apiTaskRow.interface';
 import {themeColors} from '@/theme';
 
-const Table = ({tasksData}: {tasksData: ApiTaskRow[]}) => {
+const Table = ({tasks}: {tasks: ApiTaskRow[]}) => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
   const tableStyles = useTableStyles(colors);
-  const formatedData = getFormatedData(tasksData);
+  const formatedData = getFormatedData(tasks);
 
   return (
     <Box m="20px auto 40px">

@@ -11,7 +11,7 @@ import {useGetTaskByIdQuery} from '@/store';
 const UpdateTask = () => {
   const id = useParams();
   const {data, error, isLoading} = useGetTaskByIdQuery(id);
-  const taskData = data?.data;
+  const task = data?.data;
 
   if (error) {
     return <Error />;
@@ -25,7 +25,7 @@ const UpdateTask = () => {
       <Box display="flex" justifyContent="flex-start">
         <ArrowBackButton path={routes.ROOT} />
       </Box>
-      <TasksForm title={TaskAction.UPDATE} taskData={taskData} />
+      <TasksForm title={TaskAction.UPDATE} task={task} />
     </Box>
   );
 };

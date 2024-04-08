@@ -1,9 +1,9 @@
 import {Button} from '@mui/material';
 import {SubmitButtonProps} from '@/interfaces/buttonsInterfaces/submitButton.interface';
 
-const SubmitButton = ({handleSubmit, title}: SubmitButtonProps) => {
+const SubmitButton = ({title}: SubmitButtonProps) => {
   return (
-    <Button type="submit" color="secondary" variant="contained" onClick={() => handleSubmit} title={title}>
+    <Button type="submit" color="secondary" variant="contained" title={title}>
       {title}
     </Button>
   );
