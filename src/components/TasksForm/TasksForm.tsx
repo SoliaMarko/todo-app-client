@@ -1,4 +1,4 @@
-import {Navigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {Box, useMediaQuery} from '@mui/material';
 import {Formik} from 'formik';
 import dayjs from 'dayjs';
@@ -22,17 +22,18 @@ const TasksForm = ({title, task}: TaskFormProps) => {
   const [updateTask] = useUpdateTaskMutation();
   const isNonMobile = useMediaQuery('(min-width: 600px');
   const initialValues = task ? {...task} : new TaskFormModel();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (values: TaskFormModel): void => {
     if (title === 'create') {
       values.deadline = getISODateFromStr(values.deadline);
 
       addNewTask(Object.assign({}, values));
-      <Navigate to={`${routes.ROOT}`} replace={true} />;
+      navigate(`${routes.ROOT}`);
     }
     if (title === 'update') {
       updateTask(values);
-      <Navigate to={`${routes.ROOT}`} replace={true} />;
+      navigate(`${routes.ROOT}`);
     }
   };
 

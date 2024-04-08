@@ -3,6 +3,7 @@ import {Radio, Tooltip} from '@mui/material';
 import {useUpdateTaskStatusMutation} from '@/store';
 import {SelectButtonsProps} from '@/interfaces/formInterfaces/selectButtonsProps';
 import {ControlProps} from '@/interfaces/controlProps.interface';
+import {getStatusValue} from '@/utils/getValue';
 
 const RadioButtons = ({options, selectedTask}: SelectButtonsProps) => {
   const [selectedValue, setSelectedValue] = useState(selectedTask.status);
@@ -10,7 +11,7 @@ const RadioButtons = ({options, selectedTask}: SelectButtonsProps) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setSelectedValue(event.target.value);
-    updateTaskState({...selectedTask, status: event.target.value});
+    updateTaskState({_id: selectedTask._id, status: getStatusValue(event.target.value)});
   };
 
   const controlProps = (item: string): ControlProps => ({

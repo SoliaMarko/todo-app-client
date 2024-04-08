@@ -4,23 +4,27 @@ import {TaskApiResponse} from '@/interfaces/taskApiResponse.interface';
 const tasksApi = createApi({
   reducerPath: 'tasks',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5000/api/v1/tasks'
+    baseUrl: 'https://todo-app-server-n4wh2g69u-solomiias-projects-c8cf0fed.vercel.app/api/v1/tasks'
   }),
+  tagTypes: ['Task'],
   endpoints(builder) {
     return {
       getAllTasks: builder.query<TaskApiResponse, void>({
+        providesTags: ['Task'],
         query: () => ({
           url: '/',
           method: 'GET'
         })
       }),
       getTaskById: builder.query({
+        providesTags: ['Task'],
         query: ({id}) => ({
           url: `/${id}`,
           method: 'GET'
         })
       }),
       createTask: builder.mutation({
+        invalidatesTags: ['Task'],
         query: (task) => {
           delete task._id;
           return {
@@ -34,20 +38,30 @@ const tasksApi = createApi({
         }
       }),
       updateTask: builder.mutation({
+        invalidatesTags: ['Task'],
         query: (task) => ({
           url: `/${task._id}`,
           method: 'PUT',
-          body: JSON.stringify(task)
+          body: JSON.stringify(task),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
         })
       }),
       updateTaskStatus: builder.mutation({
-        query: (task) => ({
-          url: `/${task._id}`,
-          method: 'PATCH',
-          body: JSON.stringify({status: task.status})
-        })
+        query: ({_id, status}) => {
+          return {
+            url: `/${_id}`,
+            method: 'PATCH',
+            body: JSON.stringify({status}),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8'
+            }
+          };
+        }
       }),
       deleteTask: builder.mutation({
+        invalidatesTags: ['Task'],
         query: (task) => ({
           url: `/${task._id}`,
           method: 'DELETE'
