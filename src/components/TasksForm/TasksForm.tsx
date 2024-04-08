@@ -4,16 +4,16 @@ import SubmitButton from '../Buttons/SubmitButton';
 import {taskSchema} from '@/validations/form.validation';
 import {TaskAction} from '@/enums/taskAction.enum';
 import {TaskFormModel} from '@/models/taskForm.model';
-import {priorityOptions} from '@/constants/priority.constant';
-import DateInput from './DateInput';
-import MultipleAutocompleteInput from './MultipleAutocompleteInput';
-import {tagOptions as tags} from '@/constants/tags.constant';
+import {priorityOptions} from '@/constants/optionsConstants/priority.constant';
+import {tagOptions as tags} from '@/constants/optionsConstants/tags.constant';
 import TextInput from './TextInput';
 import SelectInput from './SelectInput';
+import DateInput from './DateInput';
+import MultipleAutocompleteInput from './MultipleAutocompleteInput';
 
 const initialValues = new TaskFormModel();
 
-const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) => {
+const TasksForm = ({title}: {title: TaskAction.CREATE | TaskAction.UPDATE}) => {
   const isNonMobile = useMediaQuery('(min-width: 600px');
 
   const handleFormSubmit = () => {
@@ -33,17 +33,13 @@ const TasksForm = ({action}: {action: TaskAction.CREATE | TaskAction.UPDATE}) =>
                 '& > div': {gridColumn: isNonMobile ? undefined : 'span 4'}
               }}
             >
-              <TextInput type="text" name="task" props={props} cols={4} />
-              <SelectInput options={priorityOptions} name="priority" props={props} cols={1} />
-              <DateInput name="deadline" />
+              <TextInput type="text" name="task" props={props} cols={4} isRequired={true} />
+              <SelectInput options={priorityOptions} name="priority" props={props} cols={1} isRequired={true} />
+              <DateInput name="deadline" isRequired={true} />
               <MultipleAutocompleteInput options={tags} name="tags" cols={2} />
             </Box>
             <Box display="flex" justifyContent="end" mt="30px">
-              <SubmitButton
-                handleSubmit={handleFormSubmit}
-                action={action === TaskAction.CREATE ? 'Create New Task' : 'Update Task'}
-                title={TaskAction.CREATE || TaskAction.UPDATE}
-              />
+              <SubmitButton handleSubmit={handleFormSubmit} title={title === TaskAction.CREATE ? 'Create New Task' : 'Update Task'} />
             </Box>
           </form>
         )}

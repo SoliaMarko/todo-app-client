@@ -6,32 +6,36 @@ import {mockDataTasks} from '../../data/mockData';
 import {themeColors} from '../../theme';
 import {useTableStyles} from '@/hooks/useTableStyles';
 import {columns} from '@/data/overview/column';
+import getFormatedData from '@/utils/getFormattedData';
 
 const Table = () => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
   const tableStyles = useTableStyles(colors);
+  const formatedData = getFormatedData(mockDataTasks);
 
   return (
     <Box m="20px auto 40px">
       <Box sx={{...tableStyles}}>
-        <div style={{height: 611, width: '100%'}}>
+        <Box sx={{height: 661, width: '100%'}}>
           <DataGrid
             initialState={{
               pagination: {
                 paginationModel: {pageSize: paginationRowsOptions[0]}
               }
             }}
-            checkboxSelection
-            rows={mockDataTasks}
+            rows={formatedData}
             columns={columns}
-            pageSizeOptions={paginationRowsOptions}
+            getRowId={(row) => row._id}
             disableColumnFilter
             disableColumnMenu
             disableColumnResize
+            disableRowSelectionOnClick
+            pageSizeOptions={paginationRowsOptions}
             rowHeight={50}
+            sx={{backgroundColor: theme.palette.mode === 'dark' ? colors.primary[500] : '#f5faf9'}}
           />
-        </div>
+        </Box>
       </Box>
     </Box>
   );

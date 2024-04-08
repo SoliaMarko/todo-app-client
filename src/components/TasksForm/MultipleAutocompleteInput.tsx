@@ -9,7 +9,6 @@ const MultipleAutocompleteInput = ({options, name, cols = 2}: MultipleAutocomple
       id={name}
       options={options}
       getOptionLabel={(option) => option.label}
-      defaultValue={[options[1]]}
       filterSelectedOptions
       renderInput={(params) => <TextField {...params} label={`select ${name}`} placeholder={name} />}
       sx={{gridColumn: `span ${cols}`}}

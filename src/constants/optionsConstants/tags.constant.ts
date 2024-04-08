@@ -1,4 +1,4 @@
-import {Tags} from '@/enums/tags.enum';
+import {Tags} from '@/enums/optionsEnums/tags.enum';
 import {TagOption} from '@/interfaces/optionsInterfaces/tag.interface';
 
 export const tagOptions: TagOption[] = [

@@ -1,33 +1,63 @@
-import {routes} from '@/constants/route.constant';
+import {statusOptions} from '@/constants/optionsConstants/status.constant';
+import {GridColDef} from '@mui/x-data-grid';
+import RadioButtons from '@/components/Buttons/RadioButtons';
 import EditButton from '@/components/Buttons/EditButton';
 import DeleteButton from '@/components/Buttons/DeleteButton';
+import ChipList from '@/features/ChipList';
+import AvatarLetterWithText from '@/features/AvatarLetterWithText';
+import {routes} from '@/constants/route.constant';
 
-export const columns = [
+export const columns: GridColDef[] = [
   {
     field: 'task',
-    headerName: 'TASK',
-    flex: 4,
+    headerName: 'Task',
+    flex: 3.5,
     cellClassName: 'task-column--cell'
   },
-  {field: 'priority', headerName: 'PRIORITY', flex: 1, cellClassName: 'priority-column--cell'},
-  {field: 'deadline', headerName: 'DEADLINE', flex: 1, cellClassName: 'deadline-column--cell'},
-  {field: 'tags', headerName: 'TAGS', flex: 2, cellClassName: 'tags-column--cell', sortable: false},
   {
-    field: 'edit-button',
-    headerName: '',
-    flex: 1,
-    cellClassName: 'edit-column--cell',
-    renderCell: () => <EditButton link={`${routes.TASK}/${routes.UPDATE}`} />,
-    sortable: false,
-    selectable: false
+    field: 'status',
+    headerName: 'Status',
+    headerAlign: 'center',
+    flex: 1.5,
+    align: 'center',
+    renderCell: () => <RadioButtons options={statusOptions} />,
+    sortable: false
   },
   {
-    field: 'delete-button',
-    headerName: '',
+    field: 'priority',
+    headerName: 'Priority',
+    headerAlign: 'center',
+    flex: 1.5,
+    align: 'center',
+    cellClassName: 'priority-column--cell',
+    renderCell: ({row}) => <AvatarLetterWithText text={row.priority} />,
+    sortable: false
+  },
+  {field: 'deadline', headerName: 'Deadline', headerAlign: 'center', flex: 1.5, align: 'center', cellClassName: 'deadline-column--cell'},
+  {
+    field: 'tags',
+    headerName: 'Tags',
+    headerAlign: 'center',
+    flex: 2,
+    align: 'left',
+    cellClassName: 'tags-column--cell',
+    renderCell: ({row}) => <ChipList list={row.tags} />,
+    sortable: false
+  },
+  {
+    field: 'actions',
+    headerName: 'Actions',
+    headerAlign: 'center',
     flex: 1,
-    cellClassName: 'delete-column--cell',
-    renderCell: () => <DeleteButton />,
-    sortable: false,
-    selectable: false
+    align: 'center',
+    display: 'flex',
+    cellClassName: 'actions-column--cell',
+    renderCell: () => (
+      <div>
+        <EditButton link={`${routes.TASK}/${routes.UPDATE}`} />
+        <DeleteButton />
+      </div>
+    ),
+    sortable: false
   }
 ];

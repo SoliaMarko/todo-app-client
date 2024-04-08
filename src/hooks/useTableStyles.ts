@@ -14,14 +14,23 @@ export const useTableStyles = (colors: PaletteColorScale) => {
     '& .task-column--cell': {
       color: colors.greenAccent[200]
     },
-    '& .edit-column--cell  .MuiSvgIcon-root': {
-      fill: colors.greenAccent[300]
+    '& .priority-column--cell': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'left',
+      paddingLeft: '50px'
     },
-    '& .delete-column--cell  .MuiSvgIcon-root': {
-      fill: colors.redAccent[400]
+    '& .priority-column--cell > *': {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '8px'
     },
-    '& .MuiSvgIcon-root': {
-      fill: colors.primary[200]
+    '& .tags-column--cell': {
+      color: colors.blueAccent[300],
+      display: 'flex',
+      alignItems: 'center'
     },
     '& .MuiDataGrid-footerContainer': {
       borderTop: 'none',

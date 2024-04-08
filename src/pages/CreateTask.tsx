@@ -10,7 +10,7 @@ const CreateTask = () => {
       <Box display="flex" justifyContent="flex-start">
         <ArrowBackButton path={routes.ROOT} />
       </Box>
-      <TasksForm action={TaskAction.CREATE} />
+      <TasksForm title={TaskAction.CREATE} />
     </Box>
   );
 };
