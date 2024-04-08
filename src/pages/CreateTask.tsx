@@ -2,7 +2,7 @@ import {Box} from '@mui/material';
 import TasksForm from '@/components/TasksForm/TasksForm';
 import ArrowBackButton from '@/components/Buttons/ArrowBackButton';
 import {TaskAction} from '@/enums/taskAction.enum';
-import {routes} from '@/constants/route.constant';
+import {routes} from '@/constants/global.constant';
 
 const CreateTask = () => {
   return (
@@ -10,7 +10,7 @@ const CreateTask = () => {
       <Box display="flex" justifyContent="flex-start">
         <ArrowBackButton path={routes.ROOT} />
       </Box>
-      <TasksForm title={TaskAction.CREATE} />
+      <TasksForm title={TaskAction.CREATE} taskData={undefined} />
     </Box>
   );
 };

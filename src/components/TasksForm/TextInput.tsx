@@ -1,6 +1,6 @@
+import {type ReactNode} from 'react';
 import {TextField} from '@mui/material';
-import {TextInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
-import {ReactNode} from 'react';
+import {TextInputProps} from '@/interfaces/formInterfaces/inputProps.interface';
 
 const TextInput = <T,>({type, name, props, cols, isRequired}: TextInputProps<T>) => {
   const field = {
