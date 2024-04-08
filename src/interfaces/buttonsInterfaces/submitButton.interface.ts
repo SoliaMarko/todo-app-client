@@ -1,4 +1,6 @@
+import {TaskRow} from '../globalInterfaces/taskRow.interface';
+
 export interface SubmitButtonProps {
-  handleSubmit: () => void;
   title: string;
+  handleSubmit: (task: TaskRow) => void;
 }

@@ -3,7 +3,7 @@ import {SubmitButtonProps} from '@/interfaces/buttonsInterfaces/submitButton.int
 
 const SubmitButton = ({handleSubmit, title}: SubmitButtonProps) => {
   return (
-    <Button type="submit" color="secondary" variant="contained" onClick={handleSubmit} title={title}>
+    <Button type="submit" color="secondary" variant="contained" onClick={() => handleSubmit} title={title}>
       {title}
     </Button>
   );

@@ -1,18 +1,18 @@
 import {Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
-import {paginationRowsOptions} from '@/constants/table.constant';
-import {mockDataTasks} from '../../data/mockData';
-import {themeColors} from '../../theme';
-import {useTableStyles} from '@/hooks/useTableStyles';
 import {columns} from '@/data/overview/column';
-import getFormatedData from '@/utils/getFormattedData';
+import {useTableStyles} from '@/hooks/useTableStyles';
+import {getFormatedData} from '@/utils/getFormattedData';
+import {paginationRowsOptions} from '@/constants/global.constant';
+import {ApiTaskRow} from '@/interfaces/apiTaskRow.interface';
+import {themeColors} from '@/theme';
 
-const Table = () => {
+const Table = ({tasksData}: {tasksData: ApiTaskRow[]}) => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
   const tableStyles = useTableStyles(colors);
-  const formatedData = getFormatedData(mockDataTasks);
+  const formatedData = getFormatedData(tasksData);
 
   return (
     <Box m="20px auto 40px">

@@ -1,6 +1,6 @@
+import {type ReactNode} from 'react';
 import {TextField, MenuItem} from '@mui/material';
-import {SelectInputProps} from '@/interfaces/formInterfaces/taskFieldProps.interface';
-import {ReactNode} from 'react';
+import {SelectInputProps} from '@/interfaces/formInterfaces/inputProps.interface';
 
 const SelectInput = <T,>({options, name, props, cols, isRequired}: SelectInputProps<T>) => {
   const field = {
@@ -21,7 +21,7 @@ const SelectInput = <T,>({options, name, props, cols, isRequired}: SelectInputPr
       sx={{gridColumn: `span ${cols}`}}
       required={isRequired}
     >
-      {options.map((option) => {
+      {options.map((option): JSX.Element => {
         return (
           <MenuItem value={option.value} key={option.value}>
             {option.label}

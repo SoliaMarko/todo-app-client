@@ -1,11 +1,11 @@
-import {statusOptions} from '@/constants/optionsConstants/status.constant';
 import {GridColDef} from '@mui/x-data-grid';
 import RadioButtons from '@/components/Buttons/RadioButtons';
 import EditButton from '@/components/Buttons/EditButton';
 import DeleteButton from '@/components/Buttons/DeleteButton';
 import ChipList from '@/features/ChipList';
 import AvatarLetterWithText from '@/features/AvatarLetterWithText';
-import {routes} from '@/constants/route.constant';
+import {statusOptions} from '@/constants/optionsConstants/status.constant';
+import {routes} from '@/constants/global.constant';
 
 export const columns: GridColDef[] = [
   {
@@ -20,7 +20,7 @@ export const columns: GridColDef[] = [
     headerAlign: 'center',
     flex: 1.5,
     align: 'center',
-    renderCell: () => <RadioButtons options={statusOptions} />,
+    renderCell: ({row}) => <RadioButtons options={statusOptions} selectedTask={row} />,
     sortable: false
   },
   {
@@ -52,10 +52,10 @@ export const columns: GridColDef[] = [
     align: 'center',
     display: 'flex',
     cellClassName: 'actions-column--cell',
-    renderCell: () => (
+    renderCell: ({row}) => (
       <div>
-        <EditButton link={`${routes.TASK}/${routes.UPDATE}`} />
-        <DeleteButton />
+        <EditButton link={`${routes.TASK}/${row._id}`} />
+        <DeleteButton task={row} />
       </div>
     ),
     sortable: false

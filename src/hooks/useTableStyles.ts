@@ -1,6 +1,7 @@
 import {PaletteColorScale} from '@/interfaces/globalInterfaces/colorsScale.interface';
+import {CSSSelectorStyles} from '@/types/cssSelectorStyles.type';
 
-export const useTableStyles = (colors: PaletteColorScale) => {
+export const useTableStyles = (colors: PaletteColorScale): CSSSelectorStyles => {
   return {
     '& .MuiDataGrid-root': {
       fontSize: '1rem'

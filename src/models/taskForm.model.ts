@@ -1,9 +1,14 @@
-import dayjs from 'dayjs';
-import getTodayDate from '@/utils/getTodayDate';
+import {Priority} from '@/enums/optionsEnums/priority.enum';
+import {Status} from '@/enums/optionsEnums/status.enum';
+import {Tags} from '@/enums/optionsEnums/tags.enum';
+import {getTodayDate} from '@/utils/getFormattedDate';
+import {TaskRow} from '@/interfaces/globalInterfaces/taskRow.interface';
 
-export class TaskFormModel {
+export class TaskFormModel implements TaskRow {
+  public _id: string = '';
   public task: string = '';
-  public priority: number = 1;
-  public deadline: string = dayjs(getTodayDate()).toString();
-  public tags: number[] = [];
+  public status: Status | string = Status.NotStarted;
+  public priority: Priority = Priority.Low;
+  public deadline: string = `${getTodayDate()}`;
+  public tags: Tags[] | [] = [];
 }

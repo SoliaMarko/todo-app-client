@@ -1,9 +1,8 @@
 import {RouterProvider} from 'react-router-dom';
 import {CssBaseline, ThemeProvider} from '@mui/material';
 import {useMode} from './hooks/useMode';
-import ThemeToggleButton from './components/Buttons/ThemeToggleButton';
-import {ColorModeContext} from './theme';
 import router from './router';
+import {ColorModeContext} from './theme';
 import './App.css';
 
 function App() {
@@ -14,10 +13,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <main className="content">
-            <ThemeToggleButton />
-            <RouterProvider router={router} />
-          </main>
+          <RouterProvider router={router} />
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>

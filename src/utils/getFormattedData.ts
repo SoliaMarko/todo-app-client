@@ -1,17 +1,16 @@
-import {TaskData} from '@/interfaces/globalInterfaces/taskData.interface';
 import {getStatusLabel, getPriorityLabel, getTagLabel} from './getLabel';
+import {getStrDateFromISO} from './getFormattedDate';
+import {ApiTaskRow} from '@/interfaces/apiTaskRow.interface';
+import {FormattedRow} from '@/interfaces/formattedRow.interface';
 
-const getFormatedData = (data: TaskData[]) => {
-  return data.map((row: TaskData) => {
+export const getFormatedData = (data: ApiTaskRow[]): FormattedRow[] =>
+  data.map((row: ApiTaskRow) => {
     return {
       _id: row._id,
       task: row.task,
       status: getStatusLabel(row.status),
       priority: getPriorityLabel(row.priority),
-      deadline: row.deadline,
+      deadline: getStrDateFromISO(row.deadline),
       tags: row.tags.map((tag: number) => getTagLabel(tag))
     };
   });
-};
-
-export default getFormatedData;
