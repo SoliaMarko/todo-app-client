@@ -9,20 +9,16 @@ const tasksApi = createApi({
   endpoints(builder) {
     return {
       getAllTasks: builder.query<TaskApiResponse, void>({
-        query: () => {
-          return {
-            url: '/',
-            method: 'GET'
-          };
-        }
+        query: () => ({
+          url: '/',
+          method: 'GET'
+        })
       }),
       getTaskById: builder.query({
-        query: ({id}) => {
-          return {
-            url: `/${id}`,
-            method: 'GET'
-          };
-        }
+        query: ({id}) => ({
+          url: `/${id}`,
+          method: 'GET'
+        })
       }),
       createTask: builder.mutation({
         query: (task) => ({
@@ -42,13 +38,11 @@ const tasksApi = createApi({
         })
       }),
       updateTaskStatus: builder.mutation({
-        query: (task) => {
-          return {
-            url: `/${task._id}`,
-            method: 'PATCH',
-            body: JSON.stringify({status: task.status})
-          };
-        }
+        query: (task) => ({
+          url: `/${task._id}`,
+          method: 'PATCH',
+          body: JSON.stringify({status: task.status})
+        })
       }),
       deleteTask: builder.mutation({
         query: (task) => ({
