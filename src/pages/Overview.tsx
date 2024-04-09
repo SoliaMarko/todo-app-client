@@ -9,7 +9,7 @@ import {useGetAllTasksQuery} from '@/store';
 
 const Overview = () => {
   const {data, error, isLoading} = useGetAllTasksQuery();
-  const tasksData = data?.data || [];
+  const tasks = data?.data || [];
 
   if (error) {
     return <Error />;
@@ -17,7 +17,7 @@ const Overview = () => {
   if (isLoading) {
     return <Loader />;
   }
-  if (Object.keys(tasksData).length > 0) {
+  if (Object.keys(tasks).length > 0) {
     return (
       <Box>
         <Box display="flex" justifyContent="flex-start">
@@ -26,7 +26,7 @@ const Overview = () => {
         <Box display="flex" justifyContent="flex-end">
           <AddButton path={`${routes.TASK}/${routes.CREATE}`} />
         </Box>
-        <Table tasksData={tasksData} />
+        <Table tasks={tasks} />
       </Box>
     );
   }
