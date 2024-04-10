@@ -4,8 +4,8 @@ const initialState = {
   search: '',
   status: [],
   priority: [],
-  from: null,
-  to: null
+  startDate: null,
+  endDate: null
 };
 
 const filterSlice = createSlice({

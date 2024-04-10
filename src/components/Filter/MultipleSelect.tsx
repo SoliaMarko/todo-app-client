@@ -8,18 +8,16 @@ const MultipleSelect = ({name, options, value, onChange}: MultipleSelectProps) =
   };
 
   return (
-    <div>
-      <FormControl sx={{width: 300}}>
-        <InputLabel id={`${name}-label`}>{name}</InputLabel>
-        <Select labelId={`${name}-label`} id={name} multiple value={value} onChange={handleChange} input={<OutlinedInput label="Name" />}>
-          {options.map((value) => (
-            <MenuItem key={value} value={value}>
-              {value}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+    <FormControl sx={{width: 300}}>
+      <InputLabel id={`${name}-label`}>{name}</InputLabel>
+      <Select labelId={`${name}-label`} id={name} multiple value={value} onChange={handleChange} input={<OutlinedInput label="Name" />}>
+        {options.map((value) => (
+          <MenuItem key={value} value={value}>
+            {value}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 };
 
