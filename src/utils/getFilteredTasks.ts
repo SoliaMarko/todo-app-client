@@ -2,6 +2,17 @@ import {Filters} from '@/interfaces/filterInterfaces/filters.props.interface';
 import {FormattedTaskRow} from '@/interfaces/formattedTaskRow.interface';
 import dayjs from 'dayjs';
 
+const findBySearch = (tasks: FormattedTaskRow[], search: string) => {
+  return tasks.filter((task) => {
+    let found = false;
+    Object.values(task).forEach((value) => {
+      if (`${value}`.toLowerCase().includes(search)) found = true;
+    });
+
+    return found;
+  });
+};
+
 const filterByStatus = (tasks: FormattedTaskRow[], status: string[]) => tasks.filter((task) => status.includes(task.status));
 
 const filterByPriority = (tasks: FormattedTaskRow[], priority: string[]) => tasks.filter((task) => priority.includes(task.priority));
@@ -31,14 +42,15 @@ const filterByDateRange = (task: FormattedTaskRow, from: Date, to: Date) => {
 const getFilteredTasks = (tasks: FormattedTaskRow[], filters: Filters) => {
   let filteredTasks = [...tasks];
 
+  if (filters.search) {
+    filteredTasks = findBySearch(filteredTasks, filters.search);
+  }
   if (filters.status.length) {
     filteredTasks = filterByStatus(filteredTasks, filters.status);
   }
-
   if (filters.priority.length) {
     filteredTasks = filterByPriority(filteredTasks, filters.priority);
   }
-
   if (filters.from || filters.to) {
     filteredTasks = filteredTasks.filter((task) => filterByDateRange(task, filters.from, filters.to));
   }

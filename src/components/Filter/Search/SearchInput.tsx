@@ -6,7 +6,7 @@ import {SearchInputProps} from '@/interfaces/filterInterfaces/searchInputProps.i
 
 const SearchInput = ({name, cols = 3, value, onChange}: SearchInputProps) => {
   const handleChange = (event: ChangeEvent) => {
-    onChange(name, event.target.value.toLowerCase());
+    onChange(name, event.target.value.trim().toLowerCase());
   };
 
   return (
