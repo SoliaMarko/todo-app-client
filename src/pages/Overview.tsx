@@ -1,8 +1,8 @@
 import {Box, Typography} from '@mui/material';
 import Table from '@/components/Table/Table';
 import AddButton from '@/components/Buttons/AddButton';
-import Error from '../features/Error';
-import Loader from '@/features/Loader';
+import Error from '../components/Error';
+import Loader from '@/components/Loader';
 import Filter from '@/components/Filter/Filter';
 import {routes} from '@/constants/global.constant';
 import {useGetAllTasksQuery} from '@/store';

@@ -2,7 +2,7 @@ import {createBrowserRouter} from 'react-router-dom';
 import Overview from './pages/Overview';
 import CreateTask from './pages/CreateTask';
 import UpdateTask from './pages/UpdateTask';
-import Error from './features/Error';
+import Error from './components/Error';
 import {routes} from './constants/global.constant';
 import AppLayout from './pages/AppLayout';
 

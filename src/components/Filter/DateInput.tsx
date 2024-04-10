@@ -11,14 +11,7 @@ const DateInput = ({name, value, onChange}: {name: string; value: dayjs.Dayjs; o
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker
-        label={name}
-        name={name}
-        format={formats.DATE_FORMAT}
-        onChange={handleChange}
-        value={value}
-        // slotProps={{field: {clearable: true}}}
-      />
+      <DatePicker label={name} name={name} format={formats.DATE_FORMAT} onChange={handleChange} value={value} />
     </LocalizationProvider>
   );
 };
