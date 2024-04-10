@@ -3,12 +3,14 @@ import {setupListeners} from '@reduxjs/toolkit/query';
 import {tasksApi} from './apis/tasksApi';
 import {tasksReducer} from './slices/tasksSlice';
 import {filterReducer} from './slices/filterSlice';
+import {confirmationReducer} from './slices/confirmationSlice';
 
 export const store = configureStore({
   reducer: {
     [tasksApi.reducerPath]: tasksApi.reducer,
     tasksSlice: tasksReducer,
-    filters: filterReducer
+    filters: filterReducer,
+    confirmation: confirmationReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

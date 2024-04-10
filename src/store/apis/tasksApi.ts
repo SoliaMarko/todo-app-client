@@ -62,8 +62,8 @@ const tasksApi = createApi({
       }),
       deleteTask: builder.mutation({
         invalidatesTags: ['Task'],
-        query: (task) => ({
-          url: `/${task._id}`,
+        query: (id) => ({
+          url: `/${id}`,
           method: 'DELETE'
         })
       })
