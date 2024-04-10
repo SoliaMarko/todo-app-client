@@ -2,7 +2,7 @@ import {type ReactNode} from 'react';
 import {TextField, MenuItem} from '@mui/material';
 import {SelectInputProps} from '@/interfaces/formInterfaces/inputProps.interface';
 
-const SelectInput = <T,>({options, name, props, cols, isRequired}: SelectInputProps<T>) => {
+const SelectInput = <T,>({options, name, props, cols = 1, isRequired}: SelectInputProps<T>) => {
   const field = {
     name,
     id: name,

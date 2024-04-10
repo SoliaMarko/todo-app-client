@@ -1,6 +1,10 @@
 #root {
+  text-align: center;
+}
+
+main {
   max-width: 1480px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
+  /* background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); */
 }

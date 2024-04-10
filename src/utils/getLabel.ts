@@ -7,3 +7,7 @@ export const getStatusLabel = (value: number) => statusOptions.find((option) => 
 export const getPriorityLabel = (value: number) => priorityOptions.find((option) => option.value === value)?.label || priorityOptions[0].label;
 
 export const getTagLabel = (value: number) => tagOptions.find((option) => option.value === value)?.label || tagOptions[0].label;
+
+export const getAllStatusLabels = () => statusOptions.map((option) => option?.label);
+
+export const getAllPriorityLabels = () => priorityOptions.map((option) => option?.label);

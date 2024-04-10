@@ -1,9 +1,9 @@
 import {getStatusLabel, getPriorityLabel, getTagLabel} from './getLabel';
 import {getStrDateFromISO} from './getFormattedDate';
 import {ApiTaskRow} from '@/interfaces/apiTaskRow.interface';
-import {FormattedRow} from '@/interfaces/formattedRow.interface';
+import {FormattedTaskRow} from '@/interfaces/formattedTaskRow.interface';
 
-export const getFormatedData = (data: ApiTaskRow[]): FormattedRow[] =>
+export const getFormattedData = (data: ApiTaskRow[]): FormattedTaskRow[] =>
   data.map((row: ApiTaskRow) => {
     return {
       _id: row._id,

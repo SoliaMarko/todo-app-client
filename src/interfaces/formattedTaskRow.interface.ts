@@ -1,4 +1,4 @@
-export interface FormattedRow {
+export interface FormattedTaskRow {
   _id: string;
   task: string;
   status: string;

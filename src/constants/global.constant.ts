@@ -6,7 +6,7 @@ export const routes = {
 };
 
 export const formats = {
-  DATE_FORMAT: 'YYYY/MM/DD'
+  DATE_FORMAT: 'DD/MM/YYYY'
 };
 
 export const paginationRowsOptions = [10, 20, 50];

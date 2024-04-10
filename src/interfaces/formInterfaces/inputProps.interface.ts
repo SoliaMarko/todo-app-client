@@ -8,14 +8,14 @@ export interface TextInputProps<T> extends FormProps {
   type?: string;
   name: string;
   props: FormikProps<T>;
-  cols: number;
+  cols?: number;
   isRequired?: boolean;
 }
 
 export interface SelectInputProps<T> extends FormProps {
   options: Array<PriorityOption>;
   name: string;
-  cols: number;
+  cols?: number;
   props: FormikProps<T>;
   isRequired?: boolean;
 }
@@ -23,7 +23,7 @@ export interface SelectInputProps<T> extends FormProps {
 export interface DateInputProps {
   name: string;
   isRequired?: boolean;
-  defaultDate: dayjs.Dayjs;
+  defaultDate?: dayjs.Dayjs;
   values: TaskRow;
 }
 

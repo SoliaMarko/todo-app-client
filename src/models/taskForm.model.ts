@@ -10,5 +10,5 @@ export class TaskFormModel implements TaskRow {
   public status: Status | string = Status.NotStarted;
   public priority: Priority = Priority.Low;
   public deadline: string = `${getTodayDate()}`;
-  public tags: Tags[] | [] = [];
+  public tags: Tags[] = [];
 }
