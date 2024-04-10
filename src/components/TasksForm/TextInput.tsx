@@ -2,7 +2,7 @@ import {type ReactNode} from 'react';
 import {TextField} from '@mui/material';
 import {TextInputProps} from '@/interfaces/formInterfaces/inputProps.interface';
 
-const TextInput = <T,>({type, name, props, cols, isRequired}: TextInputProps<T>) => {
+const TextInput = <T,>({type, name, props, cols = 4, isRequired}: TextInputProps<T>) => {
   const field = {
     name,
     id: name,

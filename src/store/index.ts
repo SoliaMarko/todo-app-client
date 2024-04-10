@@ -1,12 +1,19 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {setupListeners} from '@reduxjs/toolkit/query';
 import {tasksApi} from './apis/tasksApi';
+import {tasksReducer} from './slices/tasksSlice';
+import {filterReducer} from './slices/filterSlice';
 
 export const store = configureStore({
   reducer: {
-    [tasksApi.reducerPath]: tasksApi.reducer
+    [tasksApi.reducerPath]: tasksApi.reducer,
+    tasksSlice: tasksReducer,
+    filters: filterReducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(tasksApi.middleware)
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false
+    }).concat(tasksApi.middleware)
 });
 
 setupListeners(store.dispatch);
@@ -19,3 +26,6 @@ export {
   useUpdateTaskStatusMutation,
   useDeleteTaskMutation
 } from './apis/tasksApi';
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;

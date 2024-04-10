@@ -1,18 +1,21 @@
+import {useSelector} from 'react-redux';
 import {Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
 import {DataGrid} from '@mui/x-data-grid';
 import {columns} from '@/data/overview/column';
 import {useTableStyles} from '@/hooks/useTableStyles';
-import {getFormatedData} from '@/utils/getFormattedData';
 import {paginationRowsOptions} from '@/constants/global.constant';
-import {ApiTaskRow} from '@/interfaces/apiTaskRow.interface';
 import {themeColors} from '@/theme';
+import {FormattedTaskRow} from '@/interfaces/formattedTaskRow.interface';
+import {IRootState} from '@/types/IRootState.type';
+import getFilteredTasks from '@/utils/getFilteredTasks';
 
-const Table = ({tasks}: {tasks: ApiTaskRow[]}) => {
+const Table = ({tasks}: {tasks: FormattedTaskRow[]}) => {
   const theme = useTheme();
   const colors = themeColors(theme.palette.mode);
   const tableStyles = useTableStyles(colors);
-  const formatedData = getFormatedData(tasks);
+  const filters = useSelector((state: IRootState) => state.filters);
+  const filteredTasks = getFilteredTasks(tasks, filters);
 
   return (
     <Box m="20px auto 40px">
@@ -24,7 +27,7 @@ const Table = ({tasks}: {tasks: ApiTaskRow[]}) => {
                 paginationModel: {pageSize: paginationRowsOptions[0]}
               }
             }}
-            rows={formatedData}
+            rows={filteredTasks}
             columns={columns}
             getRowId={(row) => row._id}
             disableColumnFilter

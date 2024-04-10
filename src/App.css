@@ -1,6 +1,8 @@
 #root {
+  text-align: center;
+}
+
+main {
   max-width: 1480px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }

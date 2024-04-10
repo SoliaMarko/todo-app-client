@@ -1,13 +1,12 @@
 import {NavLink} from 'react-router-dom';
-import {IconButton} from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
+import {Button} from '@mui/material';
 
 const AddButton = ({path}: {path: string}) => {
   return (
     <NavLink to={path}>
-      <IconButton>
-        <AddIcon />
-      </IconButton>
+      <Button sx={{color: '#eefc5e'}} variant="contained">
+        Add Task
+      </Button>
     </NavLink>
   );
 };

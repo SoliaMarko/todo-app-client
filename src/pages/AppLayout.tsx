@@ -1,10 +1,10 @@
 import {Outlet} from 'react-router-dom';
-import ThemeToggleButton from '@/components/Buttons/ThemeToggleButton';
+import Header from '@/components/Layout/Header';
 
 const AppLayout = () => {
   return (
     <>
-      <ThemeToggleButton />
+      <Header />
       <main>
         <Outlet />
       </main>
