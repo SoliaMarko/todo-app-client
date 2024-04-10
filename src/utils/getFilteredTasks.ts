@@ -2,17 +2,9 @@ import {Filters} from '@/interfaces/filterInterfaces/filters.props.interface';
 import {FormattedTaskRow} from '@/interfaces/formattedTaskRow.interface';
 import dayjs from 'dayjs';
 
-const filterByStatus = (tasks: FormattedTaskRow[], status: string[]) => {
-  return tasks.filter((task) => {
-    return status.includes(task.status);
-  });
-};
+const filterByStatus = (tasks: FormattedTaskRow[], status: string[]) => tasks.filter((task) => status.includes(task.status));
 
-const filterByPriority = (tasks: FormattedTaskRow[], priority: string[]) => {
-  return tasks.filter((task) => {
-    return priority.includes(task.priority);
-  });
-};
+const filterByPriority = (tasks: FormattedTaskRow[], priority: string[]) => tasks.filter((task) => priority.includes(task.priority));
 
 const filterByDateRange = (task: FormattedTaskRow, from: Date, to: Date) => {
   const deadline = dayjs(task.deadline, 'DD-MM-YYYY');
@@ -23,10 +15,12 @@ const filterByDateRange = (task: FormattedTaskRow, from: Date, to: Date) => {
     const deadlineTs = deadline.valueOf();
 
     return deadlineTs >= min && deadlineTs <= max;
-  } else if (from) {
+  }
+  if (from) {
     const min = dayjs(from).valueOf();
     return deadline.valueOf() >= min;
-  } else if (to) {
+  }
+  if (to) {
     const max = dayjs(to).valueOf();
     return deadline.valueOf() <= max;
   }
@@ -46,9 +40,7 @@ const getFilteredTasks = (tasks: FormattedTaskRow[], filters: Filters) => {
   }
 
   if (filters.from || filters.to) {
-    filteredTasks = filteredTasks.filter((task) => {
-      return filterByDateRange(task, filters.from, filters.to);
-    });
+    filteredTasks = filteredTasks.filter((task) => filterByDateRange(task, filters.from, filters.to));
   }
 
   return filteredTasks;
