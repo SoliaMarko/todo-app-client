@@ -1,7 +1,7 @@
 import {Box, Typography} from '@mui/material';
 import Table from '@/components/Table/Table';
 import AddButton from '@/components/Buttons/AddButton';
-import StatsButton from '@/components/Buttons/StatsButton';
+import Stats from '@/features/Stats/Stats';
 import Error from '../components/Error';
 import Loader from '@/components/Loader';
 import Filter from '@/components/Filter/Filter';
@@ -25,10 +25,12 @@ const Overview = () => {
   return (
     <Box>
       <ConfirmationDialog />
-      <Box display="flex" justifyContent="flex-end" alignItems="center" sx={{mt: 2, mb: 4}}>
-        <StatsButton />
-        <LegendsList />
-        <AddButton path={`${routes.TASK}/${routes.CREATE}`} />
+      <Box display="flex" justifyContent="space-between" alignItems="center" sx={{mt: 2, mb: 4}}>
+        <Stats tasks={formattedTasks} />
+        <Box display="flex" justifyContent="flex-end" alignItems="center">
+          <LegendsList />
+          <AddButton path={`${routes.TASK}/${routes.CREATE}`} />
+        </Box>
       </Box>
 
       {Object.keys(tasks).length > 0 ? (

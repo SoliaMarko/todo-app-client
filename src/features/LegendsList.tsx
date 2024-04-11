@@ -18,7 +18,7 @@ const LegendsList = () => {
       {labels.map((label, index) => (
         <ListItem key={index} sx={{py: 0}}>
           <ListItemAvatar>
-            <AvatarLetterWithText text={label} size={12} />
+            <AvatarLetterWithText text={label} />
           </ListItemAvatar>
           <ListItemText primary={label} />
         </ListItem>

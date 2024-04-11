@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom';
-import {Box, Card, useMediaQuery} from '@mui/material';
+import {Box, Card, useMediaQuery, useTheme} from '@mui/material';
 import {Formik} from 'formik';
 import dayjs from 'dayjs';
 import TextInput from './TextInput';
@@ -23,6 +23,7 @@ const TasksForm = ({title, task}: TaskFormProps) => {
   const isNonMobile = useMediaQuery('(min-width: 600px');
   const initialValues = task ? {...task} : new TaskFormModel();
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleFormSubmit = (values: TaskFormModel): void => {
     if (title === 'create') {
@@ -37,7 +38,7 @@ const TasksForm = ({title, task}: TaskFormProps) => {
   };
 
   return (
-    <Card sx={{bgcolor: '#587c87', height: 420}}>
+    <Card sx={{bgcolor: theme.palette.mode === 'dark' ? '#1d4a57' : '#f5faf9', height: 420}}>
       <Box m="20px" sx={{height: '100%'}}>
         <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={taskSchema} sx={{height: '100%'}}>
           {(props): JSX.Element => (

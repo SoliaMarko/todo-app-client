@@ -1,6 +1,7 @@
 import {Stack, Avatar} from '@mui/material';
 
-const AvatarLetterWithText = ({text}: {text: 'Low' | 'Medium' | 'High' | 'Critical'; size: number}) => {
+const AvatarLetterWithText = ({text}: {text: string}) => {
+  if (text !== 'Low' && text !== 'Medium' && text !== 'High' && text !== 'Critical') return;
   const avatarLetterColors = {
     darkTheme: {
       Low: '#7ed957',
