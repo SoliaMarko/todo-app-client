@@ -4,7 +4,7 @@ import {TaskApiResponse} from '@/interfaces/taskApiResponse.interface';
 const tasksApi = createApi({
   reducerPath: 'tasks',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://todo-app-server-2q1qqul12-solomiias-projects-c8cf0fed.vercel.app/api/v1/tasks'
+    baseUrl: 'https://todo-app-server-lsvg658od-solomiias-projects-c8cf0fed.vercel.app/api/v1/tasks'
   }),
   tagTypes: ['Task'],
   endpoints(builder) {
