@@ -6,3 +6,20 @@ main {
   max-width: 1480px;
   margin: 0 auto;
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d0d1d5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #646580;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3d426a;
+}

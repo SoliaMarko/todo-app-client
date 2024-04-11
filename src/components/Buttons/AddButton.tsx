@@ -4,7 +4,7 @@ import {Button} from '@mui/material';
 const AddButton = ({path}: {path: string}) => {
   return (
     <NavLink to={path}>
-      <Button sx={{color: '#eefc5e'}} variant="contained">
+      <Button sx={{color: '#4cceac'}} variant="contained">
         Add Task
       </Button>
     </NavLink>

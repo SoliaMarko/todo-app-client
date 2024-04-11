@@ -22,7 +22,7 @@ const UpdateTask = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-start">
+      <Box display="flex" justifyContent="flex-start" my={3}>
         <ArrowBackButton path={routes.ROOT} />
       </Box>
       <TasksForm title={TaskAction.UPDATE} task={task} />

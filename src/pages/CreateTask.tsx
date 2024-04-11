@@ -7,7 +7,7 @@ import {routes} from '@/constants/global.constant';
 const CreateTask = () => {
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-start">
+      <Box display="flex" justifyContent="flex-start" my={3}>
         <ArrowBackButton path={routes.ROOT} />
       </Box>
       <TasksForm title={TaskAction.CREATE} task={undefined} />

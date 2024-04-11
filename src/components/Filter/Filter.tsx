@@ -35,7 +35,7 @@ const Filter = () => {
           justifyContent="space-between"
           alignItems="center"
           sx={{
-            '& > div': {gridColumn: isNonMobile ? undefined : 'span 12'}
+            '& > div': {gridColumn: isNonMobile ? 'span 16' : 'span 12'}
           }}
         >
           <SearchInput name="search" value={search} onChange={handleChange} />
