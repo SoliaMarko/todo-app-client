@@ -10,7 +10,7 @@ import {IRootState} from '@/types/IRootState.type';
 
 const Filter = () => {
   const isNonMobile = useMediaQuery('(min-width: 600px');
-  const {search, status, priority, from, to} = useSelector((state: IRootState) => state.filters);
+  const {search, status, priority, startDate, endDate} = useSelector((state: IRootState) => state.filters);
   const dispatch = useDispatch();
 
   const handleChange = (name: string, value: string | Dayjs) => {
@@ -41,8 +41,8 @@ const Filter = () => {
           <SearchInput name="search" value={search} onChange={handleChange} />
           <MultipleSelect name="status" options={[...getAllStatusLabels()]} value={status} onChange={handleChange} />
           <MultipleSelect name="priority" options={getAllPriorityLabels()} value={priority} onChange={handleChange} />
-          <DateInput name="from" value={from} onChange={handleChange} />
-          <DateInput name="to" value={to} onChange={handleChange} />
+          <DateInput name="startDate" value={startDate} onChange={handleChange} />
+          <DateInput name="endDate" value={endDate} onChange={handleChange} />
           <Button type="reset" color="secondary" variant="contained" onClick={handleReset}>
             Reset
           </Button>

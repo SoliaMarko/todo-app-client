@@ -3,6 +3,6 @@ export interface Filters {
   search?: string;
   status: string[];
   priority: string[];
-  from: any;
-  to: any;
+  startDate: any;
+  endDate: any;
 }

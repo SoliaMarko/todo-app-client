@@ -7,6 +7,7 @@ import Filter from '@/components/Filter/Filter';
 import {routes} from '@/constants/global.constant';
 import {useGetAllTasksQuery} from '@/store';
 import {getFormattedData} from '@/utils/getFormattedData';
+import ConfirmationDialog from '@/features/ConfirmDialog/ConfirmDialog';
 
 const Overview = () => {
   const {data, error, isLoading} = useGetAllTasksQuery();
@@ -19,21 +20,25 @@ const Overview = () => {
   if (isLoading) {
     return <Loader />;
   }
-  if (Object.keys(tasks).length > 0) {
-    return (
-      <Box>
-        <Box display="flex" justifyContent="flex-start" sx={{mt: 2, mb: 4}}>
-          <AddButton path={`${routes.TASK}/${routes.CREATE}`} />
-        </Box>
-        <Box display="flex" flexDirection="column" alignItems="flex-start">
-          <Filter />
-        </Box>
-        <Table tasks={formattedTasks} />
+  return (
+    <Box>
+      <ConfirmationDialog />
+      <Box display="flex" justifyContent="flex-start" sx={{mt: 2, mb: 4}}>
+        <AddButton path={`${routes.TASK}/${routes.CREATE}`} />
       </Box>
-    );
-  }
 
-  return <Typography>The tasks list is empty. Press + button to add your first task 📝</Typography>;
+      {Object.keys(tasks).length > 0 ? (
+        <>
+          <Box display="flex" flexDirection="column" alignItems="flex-start">
+            <Filter />
+          </Box>
+          <Table tasks={formattedTasks} />
+        </>
+      ) : (
+        <Typography sx={{fontSize: '28px'}}>The tasks list is empty. Press "Add Task" button to add your first task 📝</Typography>
+      )}
+    </Box>
+  );
 };
 
 export default Overview;

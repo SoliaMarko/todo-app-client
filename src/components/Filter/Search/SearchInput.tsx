@@ -5,7 +5,7 @@ import {InputAdornment} from '@mui/material';
 import {SearchInputProps} from '@/interfaces/filterInterfaces/searchInputProps.interface';
 
 const SearchInput = ({name, cols = 3, value, onChange}: SearchInputProps) => {
-  const handleChange = (event: ChangeEvent) => {
+  const handleChange = (event: ChangeEvent): void => {
     onChange(name, event.target.value.trim().toLowerCase());
   };
 

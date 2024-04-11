@@ -1,13 +1,21 @@
+import {useDispatch} from 'react-redux';
 import {IconButton} from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import {TaskRow} from '@/interfaces/globalInterfaces/taskRow.interface';
-import {useDeleteTaskMutation} from '@/store/apis/tasksApi';
+import {confirmQuestions} from '@/constants/confirmQuestions.constant';
+import {setConfirmation} from '@/store/slices/confirmationSlice';
 
 const DeleteButton = ({task}: {task: TaskRow}) => {
-  const [deleteTask] = useDeleteTaskMutation();
+  const dispatch = useDispatch();
 
   const handleDeleteTask = (): void => {
-    deleteTask(task);
+    dispatch(
+      setConfirmation({
+        confirmInfo: confirmQuestions.deleteTask,
+        isOpen: true,
+        id: task._id
+      })
+    );
   };
 
   return (

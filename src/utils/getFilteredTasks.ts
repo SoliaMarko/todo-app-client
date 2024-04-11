@@ -2,37 +2,33 @@ import {Filters} from '@/interfaces/filterInterfaces/filters.props.interface';
 import {FormattedTaskRow} from '@/interfaces/formattedTaskRow.interface';
 import dayjs from 'dayjs';
 
-const findBySearch = (tasks: FormattedTaskRow[], search: string) => {
-  return tasks.filter((task) => {
-    let found = false;
-    Object.values(task).forEach((value) => {
-      if (`${value}`.toLowerCase().includes(search)) found = true;
-    });
-
-    return found;
-  });
+const findBySearch = (tasks: FormattedTaskRow[], search: string): FormattedTaskRow[] => {
+  return tasks.filter((task) => Object.values(task).some((value) => value.toString().toLowerCase().includes(search)));
 };
 
-const filterByStatus = (tasks: FormattedTaskRow[], status: string[]) => tasks.filter((task) => status.includes(task.status));
+const filterByStatus = (tasks: FormattedTaskRow[], status: string[]): FormattedTaskRow[] => tasks.filter((task) => status.includes(task.status));
 
-const filterByPriority = (tasks: FormattedTaskRow[], priority: string[]) => tasks.filter((task) => priority.includes(task.priority));
+const filterByPriority = (tasks: FormattedTaskRow[], priority: string[]): FormattedTaskRow[] =>
+  tasks.filter((task) => priority.includes(task.priority));
 
-const filterByDateRange = (task: FormattedTaskRow, from: Date, to: Date) => {
+const filterByDateRange = (task: FormattedTaskRow, startDate: Date, endDate: Date): boolean => {
   const deadline = dayjs(task.deadline, 'DD-MM-YYYY');
 
-  if (from && to) {
-    const min = dayjs(from).valueOf();
-    const max = dayjs(to).valueOf();
-    const deadlineTs = deadline.valueOf();
+  if (startDate && endDate) {
+    const min = dayjs(startDate).valueOf();
+    const max = dayjs(endDate).valueOf();
+    const deadlineTimestamp = deadline.valueOf();
 
-    return deadlineTs >= min && deadlineTs <= max;
+    return deadlineTimestamp >= min && deadlineTimestamp <= max;
   }
-  if (from) {
-    const min = dayjs(from).valueOf();
+  if (startDate) {
+    const min = dayjs(startDate).valueOf();
+
     return deadline.valueOf() >= min;
   }
-  if (to) {
-    const max = dayjs(to).valueOf();
+  if (endDate) {
+    const max = dayjs(endDate).valueOf();
+
     return deadline.valueOf() <= max;
   }
 
@@ -51,8 +47,8 @@ const getFilteredTasks = (tasks: FormattedTaskRow[], filters: Filters) => {
   if (filters.priority.length) {
     filteredTasks = filterByPriority(filteredTasks, filters.priority);
   }
-  if (filters.from || filters.to) {
-    filteredTasks = filteredTasks.filter((task) => filterByDateRange(task, filters.from, filters.to));
+  if (filters.startDate || filters.endDate) {
+    filteredTasks = filteredTasks.filter((task) => filterByDateRange(task, filters.startDate, filters.endDate));
   }
 
   return filteredTasks;
