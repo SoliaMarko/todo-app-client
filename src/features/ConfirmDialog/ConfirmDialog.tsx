@@ -24,7 +24,6 @@ const ConfirmDialog = () => {
     dispatch(setConfirmation({isConfirmed: true}));
     deleteTask(id);
     dispatch(resetConfirmation());
-    // Here will be a toaster
     console.log(`task with id ${id} has been successfully deleted`);
   };
 

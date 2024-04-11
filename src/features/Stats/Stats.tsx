@@ -26,13 +26,13 @@ const Stats = ({tasks}: {tasks: FormattedTaskRow[]}) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const statusCounts = statusLabels.reduce((acc: StatusCount, status: string) => {
+  const statusCounts = statusLabels.reduce((acc: StatusCount, status: string): StatusCount => {
     acc[status] = tasks.filter((task) => task.status === status).length;
 
     return acc;
   }, {});
 
-  const priorityCounts = priorityLabels.reduce((acc: PriorityCount, priority) => {
+  const priorityCounts = priorityLabels.reduce((acc: PriorityCount, priority): PriorityCount => {
     acc[priority] = tasks.filter((task) => task.priority === priority).length;
 
     return acc;
