@@ -11,7 +11,7 @@ const DateInput = ({name, value, onChange}: {name: string; value: dayjs.Dayjs; o
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label={name} name={name} format={formats.DATE_FORMAT} onChange={handleChange} value={value} />
+      <DatePicker label={name} name={name} format={formats.DATE_FORMAT} onChange={handleChange} value={value} sx={{gridColumn: `span 3`}} />
     </LocalizationProvider>
   );
 };
